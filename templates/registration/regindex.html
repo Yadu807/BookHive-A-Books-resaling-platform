@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS and other styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'registration/fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/style.css' %}">
+
+    <title>Sign Up</title>
+
+    <style>
+        body {
+            background: url('{% static 'login/images/bg_book.jpg' %}') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            font-family: 'Roboto', sans-serif;
+            padding-top: 150px;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #0ea8ac;
+        }
+
+        .form-container:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-color: #008c95;
+        }
+
+        .form-title {
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #0ea8ac;
+        }
+
+        .form-control {
+            height: 45px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #0ea8ac;
+            box-shadow: none;
+        }
+
+        .btn-primary {
+            background-color: #0ea8ac;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: #008c95;
+        }
+
+        .password-toggle {
+            position: relative;
+        }
+
+        .password-toggle i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .form-footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .form-footer a {
+            color: #0ea8ac;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            color: #008c95;
+        }
+
+        header.header {
+            width: 100%;
+            background-color: #0ea8ac;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .sitename {
+            font-size: 32px;
+            color: #ffffff;
+            margin: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header id="header" class="header">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a href="/" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="../static/admin/assets/img/logo1.png" alt=""  width= 150px; height= auto;>
+{#        <h1 class="sitename">BookHive</h1>#}
+      </a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="form-container">
+            <h3 class="form-title">Register</h3>
+
+            <!-- Success or error messages -->
+            {% if messages %}
+            <div class="alert alert-info">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <form action="/reg_code_user" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required pattern="[a-zA-Z .]+">
+                </div>
+
+                <div class="form-group">
+                    <label for="place">Place</label>
+                    <input type="text" class="form-control" id="place" name="place" placeholder="Place" required pattern="[a-zA-Z .]+">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required pattern="[a-z_.0-9]+[@][a-z]+[.][a-z.]+">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone" required pattern="[9876][0-9]{9}">
+                </div>
+
+                <div class="form-group">
+    <label for="file">Photo</label>
+    <input type="file" class="form-control" id="file" name="file" accept="image/png, image/gif, image/jpeg">
+</div>
+
+
+                <div class="form-group">
+                    <label for="uname">Username</label>
+                    <input type="text" class="form-control" id="uname" name="uname" placeholder="Username" required pattern="[a-zA-Z.0-9@]+">
+                </div>
+
+                <div class="form-group password-toggle">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="pas" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase, and lowercase letter, and at least 8 or more characters">
+                    <i class="bi bi-eye-slash" id="togglePassword"></i>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            I agree to the <a href="#">Terms and Conditions</a>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Register</button>
+
+                <div class="form-footer mt-3">
+                    <p>Already have an account? <a href="login">Login here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'registration/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'registration/js/popper.min.js' %}"></script>
+<script src="{% static 'registration/js/bootstrap.min.js' %}"></script>
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+
+        this.classList.toggle('bi-eye');
+        this.classList.toggle('bi-eye-slash');
+    });
+</script>
+</body>
+</html>

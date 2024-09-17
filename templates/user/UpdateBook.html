@@ -1,0 +1,206 @@
+{% extends "user/sellerindex2.html" %}
+{% block body %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add New Book</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+        .book-form {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        .book-form:hover {
+            transform: translateY(-5px);
+        }
+        .book-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .form-control {
+            margin-bottom: 20px;
+            height: 50px;
+            border-radius: 8px;
+            border: 1px solid #ccd1d9;
+            font-size: 16px;
+            padding-left: 15px;
+        }
+        .form-control:focus {
+            box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.25);
+            border-color: #0ea8ac;
+        }
+        .form-control::placeholder {
+            color: #adb5bd;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #34495e;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #0ea8ac;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #0b8284;
+            transform: translateY(-3px);
+        }
+        .submit-btn:focus {
+            outline: none;
+        }
+        .book-form textarea {
+            resize: none;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .book-form select {
+            border-radius: 8px;
+            padding: 10px;
+        }
+        /* Input icons */
+        .input-group-text {
+            background-color: #0ea8ac;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+        }
+        .input-group .form-control {
+            border-left: 0;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="book-form">
+            <h2>Update Book</h2>
+
+            <!-- Add Book Form Start -->
+            <form action="/add_book" method="POST" enctype="multipart/form-data">
+  <div class="mb-3">
+      <div align="center">
+                   <img src="{{ i.photo.url }}" width="200" height="200"/>
+          </div>
+                </div>
+                <!-- Book Title Field -->
+                <div class="mb-3">
+                    <label for="title">Book Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter the book title" required value="{{ i.Tittle }}">
+                </div>
+
+                <!-- Author Field -->
+
+                <div class="mb-3">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" id="author" name="author" placeholder="Enter the author's name" required value="{{ i.Author }}">
+                </div>
+
+                <!-- Condition Field -->
+                <div class="mb-3">
+                    <label for="condition">Condition</label>
+                    <input type="text" class="form-control" id="condition" name="condition" placeholder="e.g., New, Used" required value="{{ i.condition }}">
+                </div>
+
+                <!-- Image Upload Field -->
+                <div class="mb-3">
+                    <label for="image_url">Upload Book Image</label>
+                    <input type="file" class="form-control" id="image_url" name="image" required value="{{ i.photo }}">
+                </div>
+
+                <!-- Price Field -->
+                <div class="mb-3">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" id="price" name="price" placeholder="Enter the price" required value="{{ i.price }}">
+                </div>
+
+                <!-- Language Field -->
+                <div class="mb-3">
+                    <label for="language">Language</label>
+                    <input type="text" class="form-control" id="language" name="lang" placeholder="Enter the language" required value="{{ i.language }}">
+                </div>
+
+                <!-- Category Dropdown -->
+                <div class="mb-3">
+                    <label for="category">Category</label>
+                    <select class="form-control" id="category" name="cat"  required value="{{ i.category }}" >
+                        <option value="" disabled selected>Select Category</option>
+                        {% for j in val %}
+                            <option value="{{ j.id }}" {% if i.category.id == j.id %} selected {% endif %}>{{ j.category }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Genre Field -->
+                <div class="mb-3">
+                    <label for="genre">Genre</label>
+                    <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter the genre" required value="{{ i.genre }}">
+                </div>
+                <!-- Status Select Box -->
+<div class="mb-3">
+  <label for="status">Book Status</label>
+  <select class="form-control" id="status" name="status" required>
+    <option value="available" {% if i.status == 'available' %}selected{% endif %}>Available</option>
+    <option value="communicating" {% if i.status == 'communicating' %}selected{% endif %}>Communicating</option>
+  </select>
+</div>
+
+
+                <!-- Description Textarea -->
+                <div class="mb-3">
+                    <label for="description">Book Description</label>
+                    <textarea class="form-control" id="description" rows="4" name="dis" placeholder="Enter the book description" required >{{ i.description}}</textarea>
+                </div>
+
+
+
+                <!-- Submit Button -->
+                <div class="mb-3">
+                    <button type="submit" class="submit-btn">Update Book</button>
+                </div>
+            </form>
+            <!-- Add Book Form End -->
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}
