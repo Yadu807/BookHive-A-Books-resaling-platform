@@ -268,7 +268,8 @@
             <!-- Action Button -->
          <div class="d-flex justify-content-center gap-2 mt-3">
   <a href="/UpdateBook/{{ i.id }}" class="btn btn-warning btn-sm custom-btn-warning">Update</a>
-  <a href="#" class="btn btn-danger btn-sm custom-btn-danger" onclick="return confirm('Are you sure you want to remove this book?');">Remove</a>
+{#  <a href="/DeleteBook/{{ i.id }}" class="btn btn-danger btn-sm custom-btn-danger" onclick="return confirm('Are you sure you want to remove this book?');">Remove</a>#}
+  <a href="/DeleteBook/{{ i.id }}" id="updateBookBtn" class="btn btn-danger btn-sm custom-btn-danger" >Remove</a>
   <a href="#" class="btn btn-primary btn-sm custom-btn-primary">View Details</a>
 </div>
 
@@ -1189,6 +1190,26 @@
   <!-- Main JS File -->
   <script src="../static/admin/assets/js/main.js"></script>
 
+<script>
+document.getElementById('updateBookBtn').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "Do you want to update the book details?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#0ea8ac',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, update it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Submit the form
+            document.querySelector('form').submit();
+        }
+    });
+});
+</script>
 </body>
 
 </html>

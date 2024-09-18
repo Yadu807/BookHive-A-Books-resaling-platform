@@ -109,7 +109,7 @@
             <h2>Update Book</h2>
 
             <!-- Add Book Form Start -->
-            <form action="/add_book" method="POST" enctype="multipart/form-data">
+            <form action="/update_book_post" method="POST" enctype="multipart/form-data">
   <div class="mb-3">
       <div align="center">
                    <img src="{{ i.photo.url }}" width="200" height="200"/>
@@ -137,7 +137,7 @@
                 <!-- Image Upload Field -->
                 <div class="mb-3">
                     <label for="image_url">Upload Book Image</label>
-                    <input type="file" class="form-control" id="image_url" name="image" required value="{{ i.photo }}">
+                    <input type="file" class="form-control" id="image_url" name="image"  value="{{ i.photo }}">
                 </div>
 
                 <!-- Price Field -->

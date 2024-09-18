@@ -115,6 +115,13 @@ def addbook(request):
     return render(request, "user/AddBook.html",{"val":ob})
 
 
+def DeleteBook(request,id):
+
+    ob1=book_table.objects.get(id=id)
+    ob1.delete()
+    return redirect("/sellerhome")
+
+
 def UpdateBook(request,id):
     ob=category_table.objects.all()
     request.session['bid']=id
