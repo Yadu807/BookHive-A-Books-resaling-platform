@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="en">
 {% load static %}
 <head>
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{% static 'registration/fonts/icomoon/style.css' %}">
     <link rel="stylesheet" href="{% static 'registration/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'registration/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Sign Up</title>
 
@@ -78,17 +79,23 @@
             background-color: #008c95;
         }
 
-        .password-toggle {
-            position: relative;
-        }
+    .password-toggle {
+    position: relative;
+}
 
-        .password-toggle i {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
+.password-toggle .form-control {
+    padding-right: 2.5rem; /* Ensure enough space for the icon */
+}
+
+.password-toggle i {
+    position: absolute;
+    right: 15px; /* Adjust this value if needed */
+    top: 70%; /* Adjust this value to lower the icon within the field */
+    transform: translateY(-50%); /* Center the icon vertically based on the new top */
+    cursor: pointer;
+    color: #0ea8ac; /* Optional: Icon color to match your theme */
+}
+
 
         .form-footer {
             margin-top: 20px;
@@ -123,6 +130,14 @@
             text-transform: uppercase;
             text-decoration: none;
         }
+
+        .error {
+    color: red; /* Makes the text red */
+    font-weight: bold; /* Optional: Makes the text bold */
+    font-size: 14px; /* Optional: Adjusts the text size */
+    margin-top: 5px; /* Optional: Adds some space above the message */
+}
+
     </style>
 </head>
 <body>
@@ -152,7 +167,7 @@
             </div>
             {% endif %}
 
-            <form action="/reg_code_user" method="post" enctype="multipart/form-data">
+            <form action="{% url 'reg_code_user' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <div class="form-group">
@@ -167,7 +182,8 @@
 
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required pattern="[a-z_.0-9]+[@][a-z]+[.][a-z.]+">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)">
+                    <p id="email-message" class="error"></p> <!-- Email validation message -->
                 </div>
 
                 <div class="form-group">
@@ -176,19 +192,19 @@
                 </div>
 
                 <div class="form-group">
-    <label for="file">Photo</label>
-    <input type="file" class="form-control" id="file" name="file" accept="image/png, image/gif, image/jpeg">
-</div>
-
+                    <label for="file">Photo</label>
+                    <input type="file" class="form-control" id="file" name="file" accept="image/png, image/gif, image/jpeg">
+                </div>
 
                 <div class="form-group">
                     <label for="uname">Username</label>
-                    <input type="text" class="form-control" id="uname" name="uname" placeholder="Username" required pattern="[a-zA-Z.0-9@]+">
+                    <input type="text" class="form-control" id="uname" name="uname" placeholder="Username" required>
+                    <p id="username-message" class="error"></p> <!-- Username validation message -->
                 </div>
 
                 <div class="form-group password-toggle">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="pas" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase, and lowercase letter, and at least 8 or more characters">
+                    <input type="password" class="form-control" id="password" name="pas" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters">
                     <i class="bi bi-eye-slash" id="togglePassword"></i>
                 </div>
 
@@ -196,24 +212,28 @@
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="terms" required>
                         <label class="form-check-label" for="terms">
-                            I agree to the <a href="#">Terms and Conditions</a>
+                            I agree to the <a href="{% url 'terms' %}">Terms and Conditions</a>
                         </label>
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="submit" class="btn btn-primary" id="targetButton">Register</button>
 
                 <div class="form-footer mt-3">
-                    <p>Already have an account? <a href="login">Login here</a></p>
+                    <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
 <script src="{% static 'registration/js/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'registration/js/popper.min.js' %}"></script>
 <script src="{% static 'registration/js/bootstrap.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!-- jQuery for AJAX requests -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 <script>
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#password');
@@ -225,6 +245,96 @@
         this.classList.toggle('bi-eye');
         this.classList.toggle('bi-eye-slash');
     });
+
+
+<!-- AJAX code for live checking -->
+
+{#    $(document).ready(function() {#}
+{#        // Email live checking#}
+{#        $("#email").keyup(function() {#}
+{#            var email = $(this).val();#}
+{##}
+{#            $.ajax({#}
+{#                type: "GET",#}
+{#                url: "/registration",#}
+{#                data: { email: email },#}
+{#                success: function(data) {#}
+{#                    if (data.is_taken) {#}
+{#                        $('#email-message').text(data.error_message).css('color', 'red');#}
+{#                        $('#targetButton').prop('disabled', true);#}
+{#                    } else {#}
+{#                        $('#email-message').text("").css('color', 'green');#}
+{#                        $('#targetButton').prop('disabled', false);#}
+{#                    }#}
+{#                }#}
+{#            });#}
+{#        });#}
+{##}
+{#        // Username live checking#}
+{#        $("#uname").keyup(function() {#}
+{#            var uname = $(this).val();#}
+{##}
+{#            $.ajax({#}
+{#                type: "GET",#}
+{#                url: "{% url 'registration' %}",#}
+{#                data: { uname: uname },#}
+{#                success: function(data) {#}
+{#                    if (data.is_taken) {#}
+{#                        $('#username-message').text(data.error_message).css('color', 'red');#}
+{#                        $('#targetButton').prop('disabled', true);#}
+{#                    } else {#}
+{#                        $('#username-message').text("").css('color', 'green');#}
+{#                        $('#targetButton').prop('disabled', false);#}
+{#                    }#}
+{#                }#}
+{#            });#}
+{#        });#}
+{#    });#}
+
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+        $("#email").keyup(function(){
+            var email = $(this).val();
+
+            $.ajax({
+                type: "GET",
+                url: "/checkemail",
+                data: { email: email },
+                success: function(data) {
+                    if (data.is_taken) {
+                        $('#email-message').text(data.error_message);
+                        $('#targetButton').prop('disabled', true);
+                    } else {
+                        $('#email-message').text("");
+                        $('#targetButton').prop('disabled', false);
+                    }
+                }
+            });
+        });
+
+
+         $("#uname").keyup(function(){
+            var uname = $(this).val();
+
+            $.ajax({
+                type: "GET",
+                url: "/checkuname",
+                data: { uname: uname },
+                success: function(data) {
+                    if (data.is_taken) {
+                        $('#username-message').text(data.error_message);
+                        $('#targetButton').prop('disabled', true);
+                    } else {
+                        $('#username-message').text("");
+                        $('#targetButton').prop('disabled', false);
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

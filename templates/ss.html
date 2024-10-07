@@ -1,0 +1,62 @@
+<!-- myapp/templates/upload.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .upload-container {
+            margin: 20px;
+            text-align: center;
+        }
+        .file-upload-label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .file-upload-label i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <label for="file-upload" class="file-upload-label">
+            <i class="fas fa-upload"></i> Upload Image
+        </label>
+        <input type="file" id="file-upload" accept="image/*" style="display: none;">
+        <div id="upload-status"></div>
+    </div>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const formData = new FormData();
+                formData.append('image', file);
+
+                // AJAX request
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', '{% url "upload_image" %}', true);
+
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        document.getElementById('upload-status').innerText = response.message;
+                    } else {
+                        document.getElementById('upload-status').innerText = 'Upload failed!';
+                    }
+                };
+
+                xhr.send(formData);
+            }
+        });
+    </script>
+</body>
+</html>

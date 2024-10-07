@@ -1,0 +1,148 @@
+{% extends "user/userindex1.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Heart icon styling */
+        .heart-icon {
+            font-size: 24px;
+            color: #ccc; /* Default color (gray) */
+            cursor: pointer;
+        }
+
+        .favorited {
+            color: red !important; /* Filled red color */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-4">Favorite Books</h1>
+    <div class="row gy-4 mt-5">
+        {% for i in favorite_books %}
+        <div class="col-md-6 col-lg-4" data-aos="zoom-out" data-aos-delay="100">
+            <div class="card h-100">
+                <!-- Favorite Icon in the top-right corner -->
+                <div class="position-absolute top-0 end-0 p-2">
+                    <i class="fas fa-heart heart-icon favorited" data-book-id="{{ i.book.id }}"></i>
+                </div>
+
+                <!-- Image Section -->
+                <div class="text-center">
+                    <img src="{{ i.book.photo.url }}" alt="{{ i.book.title }}" class="img-fluid rounded-top" style="object-fit: cover; height: 200px; width: 75%">
+                </div>
+
+                <!-- Card Body -->
+                <div class="card-body text-center">
+                    <!-- Book Title -->
+                    <h5 class="card-title">{{ i.book.title }}</h5>
+                    <!-- Author -->
+                    <p class="card-text"><strong>Author:</strong> {{ i.book.Author }}</p>
+                    <!-- Category -->
+                    <p class="card-text"><strong>Category:</strong> {{ i.book.category.category }}</p>
+                    <!-- Status -->
+                    <p class="card-text"><strong>Status of Book:</strong> {{ i.book.status }}</p>
+                    <br/>
+                    <!-- Action Button -->
+                    <a href="/book_detail2/{{ i.book.id }}" class="btn btn-primary btn-sm custom-btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No favorite books found.</p>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-oFjtyTQ5dySRaePjnYYtptIliE9DRDYFJ4fI5bbK7hPZVbZfjlyTZvxcqFQynHgG" crossorigin="anonymous"></script>
+
+<!-- Main JS File -->
+<script src="../static/admin/assets/js/main.js"></script>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    // Select all heart icons
+    document.querySelectorAll('.heart-icon').forEach(function(icon) {
+      // Add click event listener to each heart icon
+      icon.addEventListener('click', function() {
+        const bookId = this.getAttribute('data-book-id');
+         $.ajax({
+                type: "GET",
+                url: "/addfav",
+                data: { bid: bookId },
+                success: function(data) {
+                    if (data.is_taken) {
+                        $('#email-message').text(data.error_message);
+                        $('#targetButton').prop('disabled', true);
+                    } else {
+                        $('#email-message').text("");
+                        $('#targetButton').prop('disabled', false);
+                    }
+                    window.location='/fav_view'
+                }
+            });
+        // Toggle the 'favorited' class
+        this.classList.toggle('favorited');
+
+        // Log the book ID to the console for now
+        console.log('Book ID added to favorites:', bookId);
+
+        // Future functionality for redirect or AJAX can go here
+        // window.location.href = '/favorites'; // Example for future redirect
+      });
+    });
+
+    // Ensure the select box has a nicer interaction by adding a focus event listener
+    const selectBox = document.querySelector('select[name="cat"]');
+    if (selectBox) {
+      selectBox.addEventListener('focus', function() {
+        this.style.boxShadow = '0 0 5px rgba(23, 162, 184, 0.5)';
+      });
+
+      selectBox.addEventListener('blur', function() {
+        this.style.boxShadow = 'none';
+      });
+    }
+
+    // See More and Show Less button functionality
+    const seeMoreBtn = document.getElementById('seeMoreBtn');
+    const showLessBtn = document.getElementById('showLessBtn');
+    const hiddenRows = document.querySelectorAll('.hidden-row');
+    let currentIndex = 0;
+
+    // Check if buttons and hidden rows exist
+    if (seeMoreBtn && showLessBtn && hiddenRows.length > 0) {
+      seeMoreBtn.style.display = 'inline-block';
+
+      seeMoreBtn.addEventListener('click', function () {
+        for (let i = currentIndex; i < currentIndex + 6 && i < hiddenRows.length; i++) {
+          hiddenRows[i].style.display = 'block';
+        }
+        currentIndex += 6;
+
+        if (currentIndex >= hiddenRows.length) {
+          seeMoreBtn.style.display = 'none';
+        }
+        showLessBtn.style.display = 'inline-block';
+      });
+
+      showLessBtn.addEventListener('click', function () {
+        hiddenRows.forEach(function(row) {
+          row.style.display = 'none';
+        });
+        currentIndex = 0;
+        showLessBtn.style.display = 'none';
+        seeMoreBtn.style.display = 'inline-block';
+      });
+    }
+  });
+</script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</body>
+</html>
+{% endblock %}

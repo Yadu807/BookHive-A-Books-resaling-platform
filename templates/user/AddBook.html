@@ -100,6 +100,27 @@
         .input-group {
             margin-bottom: 20px;
         }
+
+
+
+
+    /* Custom valid input styling */
+    input:valid, select:valid, textarea:valid {
+        border-color: green;
+    }
+
+    /* Custom invalid feedback styling */
+    .invalid-feedback {
+        color: red;
+        display: none;
+    }
+
+    /* Show feedback when input is invalid */
+    input:invalid ~ .invalid-feedback,
+    select:invalid ~ .invalid-feedback,
+    textarea:invalid ~ .invalid-feedback {
+        display: block;
+    }
     </style>
 </head>
 <body>
@@ -109,73 +130,81 @@
             <h2>Add New Book</h2>
 
             <!-- Add Book Form Start -->
-            <form action="/add_book" method="POST" enctype="multipart/form-data">
+           <!-- Add Book Form Start -->
+<form action="/add_book" method="POST" enctype="multipart/form-data" novalidate onsubmit="return validateForm()">
+    <!-- Book Title Field -->
+    <div class="mb-3">
+        <label for="title">Book Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter the book title" pattern=".{1,100}" title="Book title should be between 1 and 100 characters" required>
 
-                <!-- Book Title Field -->
-                <div class="mb-3">
-                    <label for="title">Book Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter the book title" required>
-                </div>
+    </div>
 
-                <!-- Author Field -->
-                <div class="mb-3">
-                    <label for="author">Author</label>
-                    <input type="text" class="form-control" id="author" name="author" placeholder="Enter the author's name" required>
-                </div>
+    <!-- Author Field -->
+    <div class="mb-3">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author" name="author" placeholder="Enter the author's name" pattern="[A-Za-z\s]+" title="Author name should only contain letters" required>
 
-                <!-- Condition Field -->
-                <div class="mb-3">
-                    <label for="condition">Condition</label>
-                    <input type="text" class="form-control" id="condition" name="condition" placeholder="e.g., New, Used" required>
-                </div>
+    </div>
 
-                <!-- Image Upload Field -->
-                <div class="mb-3">
-                    <label for="image_url">Upload Book Image</label>
-                    <input type="file" class="form-control" id="image_url" name="image" required>
-                </div>
+    <!-- Condition Field -->
+    <div class="mb-3">
+        <label for="condition">Condition</label>
+        <input type="text" class="form-control" id="condition" name="condition" placeholder="e.g., New, Used, Damaged"  pattern="[A-Za-z\s]+" title="Condition should be either 'New' or 'Used'" required>
 
-                <!-- Price Field -->
-                <div class="mb-3">
-                    <label for="price">Price</label>
-                    <input type="number" class="form-control" id="price" name="price" placeholder="Enter the price" required>
-                </div>
+    </div>
 
-                <!-- Language Field -->
-                <div class="mb-3">
-                    <label for="language">Language</label>
-                    <input type="text" class="form-control" id="language" name="lang" placeholder="Enter the language" required>
-                </div>
+    <!-- Image Upload Field -->
+    <div class="mb-3">
+        <label for="image_url">Upload Book Image</label>
+        <input type="file" class="form-control" id="image_url" name="image" accept="image/png, image/gif, image/jpeg" required>
 
-                <!-- Category Dropdown -->
-                <div class="mb-3">
-                    <label for="category">Category</label>
-                    <select class="form-control" id="category" name="cat" required>
-                        <option value="" disabled selected>Select Category</option>
-                        {% for i in val %}
-                            <option value="{{ i.id }}">{{ i.category }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
+    </div>
 
-                <!-- Genre Field -->
-                <div class="mb-3">
-                    <label for="genre">Genre</label>
-                    <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter the genre" required>
-                </div>
+    <!-- Price Field with HTML5 Validation -->
+    <div class="mb-3">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" name="price" placeholder="Enter the price" min="0" required>
 
-                <!-- Description Textarea -->
-                <div class="mb-3">
-                    <label for="description">Book Description</label>
-                    <textarea class="form-control" id="description" rows="4" name="dis" placeholder="Enter the book description" required></textarea>
-                </div>
+    </div>
 
-                <!-- Submit Button -->
-                <div class="mb-3">
-                    <button type="submit" class="submit-btn">Add Book</button>
-                </div>
-            </form>
-            <!-- Add Book Form End -->
+    <!-- Language Field -->
+    <div class="mb-3">
+        <label for="language">Language</label>
+        <input type="text" class="form-control" id="language" name="lang" placeholder="Enter the language" pattern="[A-Za-z\s]+" title="Language should only contain letters" required>
+
+    </div>
+
+    <!-- Category Dropdown -->
+    <div class="mb-3">
+        <label for="category">Category</label>
+        <select class="form-control" id="category" name="cat" required>
+            <option value="" disabled selected>Select Category</option>
+            {% for i in val %}
+                <option value="{{ i.id }}">{{ i.category }}</option>
+            {% endfor %}
+        </select>
+
+    </div>
+
+    <!-- Genre Field -->
+    <div class="mb-3">
+        <label for="genre">Genre</label>
+        <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter the genre" pattern="[A-Za-z\s]+" title="Genre should only contain letters" required>
+
+    </div>
+
+    <!-- Description Textarea -->
+    <div class="mb-3">
+        <label for="description">Book Description</label>
+        <textarea class="form-control" id="description" rows="4" name="dis" placeholder="Enter the book description" minlength="4" required></textarea>
+
+    </div>
+
+    <!-- Submit Button -->
+    <div class="mb-3">
+        <button type="submit" class="submit-btn">Add Book</button>
+    </div>
+</form>
 
         </div>
     </div>
@@ -184,6 +213,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
 

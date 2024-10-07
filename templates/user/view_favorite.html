@@ -1,0 +1,265 @@
+
+{% extends "user/userindex1.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <style>
+        /* General card styling */
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            height: 200px; /* Ensure image has a fixed height */
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            font-size: 0.875rem; /* Adjust button font size */
+            padding: 0.5rem 1rem; /* Adjust button padding */
+            border-radius: 5px;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+            border-color: #d39e00;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-3 {
+            margin-top: 1rem;
+        }
+
+        /* Logo styling */
+        .logo-right {
+            width: 150px;
+            height: auto;
+            margin-left: 20px; /* Adjust the value as needed */
+        }
+
+        /* Heart icon styles */
+        .heart-icon {
+            font-size: 24px;
+            color: #ccc; /* Default color (gray) */
+            cursor: pointer;
+        }
+
+        .favorited {
+            color: red !important; /* Favorited color (red) */
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Favorites - BookHive</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="../static/admin/assets/img/favicon.png" rel="icon">
+    <link href="../static/admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/admin/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../static/admin/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../static/admin/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Include Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="../static/admin/assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+            <a href="userhome" class="logo d-flex align-items-center me-auto">
+                <img src="../static/admin/assets/img/logo1.png" class="logo-right" alt="BookHive">
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="userhome">Home</a></li>
+                    <li><a href="#about">Categories</a></li>
+                    <li><a href="#services" class="active">Favorites</a></li>
+                    <li><a href="sellerhome" class="logo d-flex align-items-center me-auto">Sell</a></li>
+                    <li><a href="/home_chat">Chats</a></li>
+                    <li><a href="#team">Profile</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="text-center">
+            <h1>Your Favorite Books</h1>
+        </div>
+
+        <div class="row gy-4 mt-5">
+            {% for i in favorite_books %}
+            <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+                <div class="card h-100 position-relative">
+                    <!-- Favorite Icon in the top-right corner -->
+                    <div class="position-absolute top-0 end-0 p-2">
+                        <i class="fas fa-heart heart-icon favorited" data-book-id="{{ i.id }}"></i>
+                    </div>
+
+                    <!-- Image Section -->
+                    <div class="text-center mt-3">
+                        <img src="{{ i.photo.url }}" alt="{{ i.Title }}" class="img-fluid rounded-top" style="object-fit: cover; height: 200px;">
+                    </div>
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center" style="background-color: #0ea8ac;">
+                        <!-- Book Title -->
+                        <h5 class="card-title">{{ i.Title }}</h5>
+                        <!-- Author -->
+                        <p class="card-text"><strong>Author:</strong> {{ i.Author }}</p>
+                        <!-- Category -->
+                        <p class="card-text"><strong>Category:</strong> {{ i.category.category }}</p>
+                        <!-- Status -->
+                        <p class="card-text"><strong>Status of Book:</strong> {{ i.status }}</p><br />
+                        <!-- Action Button -->
+                        <a href="#" class="btn btn-primary btn-sm custom-btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer id="footer" class="footer light-background py-3">
+        <div class="container copyright text-center mt-4">
+            <p>© <span>2024</span> <strong class="px-1 sitename">BookHive</strong> <span>All Rights Reserved</span></p>
+            <div class="credits">
+                Designed by <a href="#">Your Team Name</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="../static/admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/admin/assets/vendor/php-email-form/validate.js"></script>
+    <script src="../static/admin/assets/vendor/aos/aos.js"></script>
+    <script src="../static/admin/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../static/admin/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../static/admin/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/admin/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../static/admin/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../static/admin/assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select all heart icons
+            document.querySelectorAll('.heart-icon').forEach(function (icon) {
+                // Add click event listener to each heart icon
+                icon.addEventListener('click', function () {
+                    const bookId = this.getAttribute('data-book-id');
+
+                    // Toggle the 'favorited' class
+                    this.classList.toggle('favorited');
+
+                    // Log the book ID to the console for now
+                    console.log('Book ID removed from favorites:', bookId);
+
+                    // Future functionality for AJAX call to remove from favorites can go here
+                    // For example:
+                    // fetch(`/remove_favorite/${bookId}/`, { method: 'POST' })
+                    //     .then(response => {
+                    //         if (!response.ok) {
+                    //             throw new Error('Network response was not ok');
+                    //         }
+                    //         return response.json();
+                    //     })
+                    //     .then(data => console.log(data))
+                    //     .catch(error => console.error('Error:', error));
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock %}
+

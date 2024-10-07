@@ -100,6 +100,25 @@
         .input-group {
             margin-bottom: 20px;
         }
+
+         /* Custom valid input styling */
+    input:valid, select:valid, textarea:valid {
+        border-color: green;
+    }
+
+    /* Custom invalid feedback styling */
+    .invalid-feedback {
+        color: red;
+        display: none;
+    }
+
+    /* Show feedback when input is invalid */
+    input:invalid ~ .invalid-feedback,
+    select:invalid ~ .invalid-feedback,
+    textarea:invalid ~ .invalid-feedback {
+        display: block;
+    }
+
     </style>
 </head>
 <body>
@@ -118,38 +137,38 @@
                 <!-- Book Title Field -->
                 <div class="mb-3">
                     <label for="title">Book Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter the book title" required value="{{ i.Tittle }}">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter the book title" pattern=".{1,100}" required value="{{ i.Tittle }}">
                 </div>
 
                 <!-- Author Field -->
 
                 <div class="mb-3">
                     <label for="author">Author</label>
-                    <input type="text" class="form-control" id="author" name="author" placeholder="Enter the author's name" required value="{{ i.Author }}">
+                    <input type="text" class="form-control" id="author" name="author" placeholder="Enter the author's name" pattern="[A-Za-z\s]+" required value="{{ i.Author }}">
                 </div>
 
                 <!-- Condition Field -->
                 <div class="mb-3">
                     <label for="condition">Condition</label>
-                    <input type="text" class="form-control" id="condition" name="condition" placeholder="e.g., New, Used" required value="{{ i.condition }}">
+                    <input type="text" class="form-control" id="condition" name="condition" placeholder="e.g., New, Used"  pattern="[A-Za-z\s]+" required value="{{ i.condition }}">
                 </div>
 
                 <!-- Image Upload Field -->
                 <div class="mb-3">
                     <label for="image_url">Upload Book Image</label>
-                    <input type="file" class="form-control" id="image_url" name="image"  value="{{ i.photo }}">
+                    <input type="file" class="form-control" id="image_url" name="image" accept="image/png, image/gif, image/jpeg"  value="{{ i.photo }}">
                 </div>
 
                 <!-- Price Field -->
                 <div class="mb-3">
                     <label for="price">Price</label>
-                    <input type="number" class="form-control" id="price" name="price" placeholder="Enter the price" required value="{{ i.price }}">
+                    <input type="number" class="form-control" id="price" name="price" placeholder="Enter the price"  required value="{{ i.price }}">
                 </div>
 
                 <!-- Language Field -->
                 <div class="mb-3">
                     <label for="language">Language</label>
-                    <input type="text" class="form-control" id="language" name="lang" placeholder="Enter the language" required value="{{ i.language }}">
+                    <input type="text" class="form-control" id="language" name="lang" placeholder="Enter the language" pattern="[A-Za-z\s]+" required value="{{ i.language }}">
                 </div>
 
                 <!-- Category Dropdown -->
@@ -166,14 +185,14 @@
                 <!-- Genre Field -->
                 <div class="mb-3">
                     <label for="genre">Genre</label>
-                    <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter the genre" required value="{{ i.genre }}">
+                    <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter the genre" pattern="[A-Za-z\s]+" required value="{{ i.genre }}">
                 </div>
                 <!-- Status Select Box -->
 <div class="mb-3">
   <label for="status">Book Status</label>
   <select class="form-control" id="status" name="status" required>
-    <option value="available" {% if i.status == 'available' %}selected{% endif %}>Available</option>
-    <option value="communicating" {% if i.status == 'communicating' %}selected{% endif %}>Communicating</option>
+    <option value="Available" {% if i.status == 'Available' %}selected{% endif %}>Available</option>
+    <option value="Unavailable" {% if i.status == 'Unavailable' %}selected{% endif %}>Unavailable</option>
   </select>
 </div>
 
@@ -181,7 +200,7 @@
                 <!-- Description Textarea -->
                 <div class="mb-3">
                     <label for="description">Book Description</label>
-                    <textarea class="form-control" id="description" rows="4" name="dis" placeholder="Enter the book description" required >{{ i.description}}</textarea>
+                    <textarea class="form-control" id="description" rows="4" name="dis" placeholder="Enter the book description" minlength="4" required >{{ i.description}}</textarea>
                 </div>
 
 

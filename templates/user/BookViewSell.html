@@ -1,0 +1,188 @@
+{% extends "user/sellerindex1.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.Tittle }} - Details</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .book-detail-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            margin-top: -95px; /* Move the card higher */
+        }
+
+        .book-detail-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-detail-header {
+            flex: 1;
+            text-align: center;
+        }
+
+        .book-detail-header img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-detail-info {
+            flex: 2;
+            padding-left: 20px;
+        }
+
+        .book-detail-info h2 {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .book-info p {
+            font-size: 1.1rem;
+            color: #495057;
+        }
+
+        .book-info strong {
+            color: #007bff;
+        }
+
+        .book-description h4 {
+            margin-top: 30px;
+            color: #343a40;
+        }
+
+        .book-description p {
+            font-size: 1.1rem;
+            color: #495057;
+            line-height: 1.5;
+        }
+
+        .back-btn .btn-primary {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+        }
+
+       .action-buttons {
+    position: absolute;
+    top: 10%;
+    right: 100px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.action-buttons .btn {
+    margin-right: 10px;
+    padding: 12px 24px; /* Increase padding for larger buttons */
+    font-size: 1.1rem; /* Increase font size for bigger text */
+    border-radius: 5px; /* Optional: makes the buttons a bit more rounded */
+}
+
+.action-buttons .btn:last-child {
+    margin-right: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Large Book Detail Card -->
+        <div class="book-detail-container p-4">
+            <!-- Book Image -->
+            <div class="book-detail-header">
+                <img src="{{ book.photo.url }}" alt="{{ book.Tittle }}" class="img-fluid">
+            </div>
+
+            <!-- Book Information and Description -->
+            <div class="book-detail-info">
+                <h2>{{ book.Tittle }}</h2>
+                <div class="book-info">
+                    <p><strong>Author:</strong> {{ book.Author }}</p>
+                    <p><strong>Price:</strong> ₹{{ book.price }}</p>
+                    <p><strong>Condition:</strong> {{ book.condition }}</p>
+                    <p><strong>Language:</strong> {{ book.language }}</p>
+                    <p><strong>Category:</strong> {{ book.category.category }}</p>
+                    <p><strong>Genre:</strong> {{ book.genre }}</p>
+                    <p><strong>Status:</strong> {{ book.status }}</p>
+                </div>
+                <div class="book-description">
+                    <h4>Description</h4>
+                    <p>{{ book.description }}</p>
+                </div>
+                <!-- Back to book list or home -->
+                <br/><br/><br/><br/><br/><br/>
+                <div class="back-btn text-center">
+                    <a href="/sellerhome" class="btn btn-primary">Back to Book List</a>
+                </div>
+            </div>
+
+            <!-- Update and Remove Buttons -->
+           <!-- Update Button -->
+            <div class="action-buttons">
+<a href="/UpdateBook/{{ book.id }}" class="btn btn-warning btn-sm custom-btn-warning">Update</a>
+
+<!-- Remove Button (Opens Modal) -->
+<a href="#" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-book-id="{{ book.id }}" class="btn btn-danger btn-sm custom-btn-danger delete-book-btn">Remove</a>
+
+            </div>
+        </div>
+    </div>
+
+<!-- Bootstrap Modal for Delete Confirmation -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to remove this book?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a href="#" id="deleteConfirmBtn" class="btn btn-danger">Yes, Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script>
+ $(document).ready(function() {
+    $('.delete-book-btn').click(function() {
+        var bookId = $(this).data('book-id');
+        console.log("Book ID for deletion: " + bookId);  // Debugging purpose
+        var deleteUrl = "/DeleteBook/" + bookId;
+
+        // Update the delete confirmation link with the correct URL
+        $('#deleteConfirmBtn').attr('href', deleteUrl);
+    });
+});
+
+</script>
+
+
+</body>
+</html>
+{% endblock %}

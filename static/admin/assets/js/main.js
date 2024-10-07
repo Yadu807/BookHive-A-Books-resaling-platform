@@ -37,14 +37,14 @@
   /**
    * Hide mobile nav on same-page/hash links
    */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
-      }
-    });
-
+ document.querySelectorAll('#navmenu a').forEach(navmenu => {
+  navmenu.addEventListener('click', () => {
+    if (document.querySelector('.mobile-nav-active')) {
+      mobileNavToggle(); // Call your function to close the mobile nav
+    }
   });
+});
+
 
   /**
    * Toggle mobile nav dropdowns

@@ -34,57 +34,207 @@
   * Updated: Aug 07 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  ======================================================== --> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- alert box- remove -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- card css -->
+    <style>
+
+        .modal {
+    z-index: 1050; /* Ensure the modal is above everything else */
+}
+
+.modal-backdrop {
+    z-index: 1040; /* Ensure the backdrop is below the modal */
+}
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal-open .modal {
+    position: fixed;
+}
+
+        .modal-content {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+
+
+
+
+        #navmenu ul.navbar-nav {
+    gap: 10px; /* Adjusts space between the links */
+}
+
+.navmenu .nav-item .nav-link {
+    padding: 10px 15px; /* Adds padding around each link */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.navmenu .nav-item .nav-link:hover {
+    color: #ffffff; /* Change link color on hover */
+}
+
+
+
+
+    /* General card styling */
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-img-top {
+        object-fit: cover;
+        height: 200px; /* Ensure image has a fixed height */
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        margin-bottom: 0.5rem;
+    }
+
+    .btn {
+        font-size: 0.875rem; /* Adjust button font size */
+        padding: 0.5rem 1rem; /* Adjust button padding */
+        border-radius: 5px;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+        border-color: #d39e00;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-content-center {
+        justify-content: center;
+    }
+
+    .gap-2 {
+        gap: 0.5rem;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .mt-3 {
+        margin-top: 1rem;
+
+    }
+
+        {#        logo#}
+
+        .logo-right {
+  width: 150px;
+  height: auto;
+  margin-left: 10px; /* Adjust the value as needed */
+}
+</style>
+
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+<header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="userhome" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="../static/admin/assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">BookHive</h1>
-      </a>
+        <!-- Logo -->
+        <a href="userhome" class="logo d-flex align-items-center" style="margin-left: -100px;">
+            <img src="../static/admin/assets/img/logo1.png" alt="BookHive Logo" width="150px" height="auto">
+        </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-{#          <li><a href="#hero" class="active">UserHome<br></a></li>#}
-             <li><a href="addbook" class="logo d-flex align-items-center me-auto">Add a book</a></li>
-          <li><a href="#about">Catogories</a></li>
-          <li><a href="#services">Favorites</a></li>
-          <li><a href="userhome" class="logo d-flex align-items-center me-auto">Buy</a></li>
-          <li><a href="#team">Chats</a></li>
-            <li><a href="#team">Profile</a></li>
-{#            <li><a href="#team">About us</a></li>#}
-{#            <li><a href="#team">Chats</a></li>#}
-{#          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>#}
-{#            <ul>#}
-{#              <li><a href="#">Dropdown 1</a></li>#}
-{#              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>#}
-{#                <ul>#}
-{#                  <li><a href="#">Deep Dropdown 1</a></li>#}
-{#                  <li><a href="#">Deep Dropdown 2</a></li>#}
-{#                  <li><a href="#">Deep Dropdown 3</a></li>#}
-{#                  <li><a href="#">Deep Dropdown 4</a></li>#}
-{#                  <li><a href="#">Deep Dropdown 5</a></li>#}
-{#                </ul>#}
-{#              </li>#}
-{#              <li><a href="#">Dropdown 2</a></li>#}
-{#              <li><a href="#">Dropdown 3</a></li>#}
-{#              <li><a href="#">Dropdown 4</a></li>#}
-{#            </ul>#}
-{#          </li>#}
-{#          <li><a href="#contact">Contact</a></li>#}
-        </ul>
-{#        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>#}
-      </nav>
+        <!-- Navigation Menu -->
+        <nav id="navmenu" class="navmenu" style="margin-right: -100px;">
+            <ul class="navbar-nav d-flex flex-row align-items-center"> <!-- Flex-row for horizontal layout -->
+                <li class="nav-item">
+                    <a href="addbook" class="nav-link">Add a Book</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Favorites</a>
+                </li>
+                <li class="nav-item">
+                    <a href="userhome" class="nav-link">Buy</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/home_chat" class="nav-link">Chats</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#team" class="nav-link">Profile</a>
+                </li>
+            </ul>
+        </nav>
 
-{#      <a class="btn-getstarted" href="#about">Get Started</a>#}
-
+        <!-- Mobile Menu Toggle Icon -->
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </div>
-  </header>
+</header>
 
   <main class="main">
 

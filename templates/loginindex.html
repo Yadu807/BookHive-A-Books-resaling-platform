@@ -168,22 +168,20 @@
                 <label for="floatingPassword">Password</label>
                 <i class="bi bi-eye-slash" id="togglePassword"></i> <!-- Eye icon -->
             </div>
-            <div class="forgot-password mb-3">
-                <a href="/forgotpassword">Forgot Password?</a>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Login</button>
- <div class="forgot-password mb-3">
+  <!-- Login Button -->
+<button type="submit" class="btn btn-primary w-100">Login</button>
 
-     <br/>
-     <table>
-         <tr>
-             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-             <td> <a href="/registration">Registration</a></td>
-         </tr>
-     </table>
+<!-- Container for forgot password and registration links below the button -->
+<div class="row mt-3">
+    <div class="col text-start">
+        <a href="/forgotpassword" class="text-primary text-decoration-none">Forgot Password?</a>
+    </div>
+    <div class="col text-end">
+        <a href="/registration" class="text-primary text-decoration-none">Registration</a>
+    </div>
+</div>
 
 
-            </div>
 
 
 
@@ -191,9 +189,9 @@
         </form>
 
 
-        <div class="footer mt-4">
-            <p>&copy; 2024 BookHive. All rights reserved.</p>
-        </div>
+{#        <div class="footer mt-4">#}
+{#            <p>&copy; 2024 BookHive. All rights reserved.</p>#}
+{#        </div>#}
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

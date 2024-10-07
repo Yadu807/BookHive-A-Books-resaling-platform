@@ -1,0 +1,343 @@
+{% extends "user/userindex1.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.Tittle }} - Details</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .book-detail-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .book-detail-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-detail-header {
+            flex: 1;
+            text-align: center;
+        }
+
+        .book-detail-header img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-detail-info {
+            flex: 2;
+            padding-left: 20px;
+        }
+
+        .book-detail-info h2 {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .book-info p {
+            font-size: 1.1rem;
+            color: #495057;
+        }
+
+        .book-info strong {
+            color: #007bff;
+        }
+
+        .book-description h4 {
+            margin-top: 30px;
+            color: #343a40;
+        }
+
+        .book-description p {
+            font-size: 1.1rem;
+            color: #495057;
+            line-height: 1.5;
+        }
+
+        .back-btn .btn-primary {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+        }
+
+        .heart-icon {
+            font-size: 24px;
+            color: #ccc; /* Default color (gray) */
+            cursor: pointer;
+        }
+
+        .favorited {
+            color: red !important; /* Favorited color (red) */
+        }
+
+        .action-buttons {
+            position: absolute;
+            top: 10%;
+            right: 100px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .action-buttons .btn {
+            margin-right: 10px;
+            padding: 12px 24px; /* Increase padding for larger buttons */
+            font-size: 1.1rem; /* Increase font size for bigger text */
+            border-radius: 5px; /* Optional: makes the buttons a bit more rounded */
+        }
+
+        .action-buttons .btn:last-child {
+            margin-right: 0;
+        }
+
+        /* related book cards */
+/* Card Styling */
+.card {
+    width: 100%; /* Full width inside its column */
+    max-width: 340px; /* Increased max-width for a larger card */
+    margin: auto; /* Center the card */
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #f4f4f9; /* Subtle off-white background */
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffffff; /* Clean white background */
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #333; /* Darker font color */
+}
+
+.card-text {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #666; /* Subtle text color */
+}
+
+/* Button Styling */
+.custom-btn-warning, .custom-btn-danger, .custom-btn-primary {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-btn-warning {
+    background-color: #f0ad4e;
+    color: #fff;
+    border: none;
+}
+
+.custom-btn-danger {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+}
+
+.custom-btn-primary {
+    background-color: #5bc0de;
+    color: #fff;
+    border: none;
+}
+
+/* Hover effects for buttons */
+.custom-btn-warning:hover, .custom-btn-danger:hover, .custom-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.custom-btn-warning:hover {
+    background-color: #ec971f;
+}
+
+.custom-btn-danger:hover {
+    background-color: #c9302c;
+}
+
+.custom-btn-primary:hover {
+    background-color: #31b0d5;
+}
+
+/* Adjust spacing between cards */
+.card + .card {
+    margin-top: 25px;
+}
+/* Image hover styling */
+.img-fluid {
+    transition: box-shadow 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.card:hover .img-fluid {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+    opacity: 0.9; /* Slightly dim the image on hover */
+}
+
+
+/*card design end */
+
+
+    </style>
+
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Heart icon styling */
+        .heart-icon {
+            font-size: 24px;
+            color: #ccc; /* Default color (gray) */
+            cursor: pointer;
+        }
+
+        .favorited {
+            color: red !important; /* Filled red color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Large Book Detail Card -->
+        <div class="book-detail-container p-4">
+            <!-- Book Image -->
+            <div class="book-detail-header">
+                <img src="{{ book.photo.url }}" alt="{{ book.Tittle }}" class="img-fluid">
+            </div>
+
+            <!-- Book Information and Description -->
+            <div class="book-detail-info">
+                <h2>{{ book.Tittle }}</h2>
+                <div class="book-info">
+                    <p><strong>Author:</strong> {{ book.Author }}</p>
+                    <p><strong>Price:</strong> ₹{{ book.price }}</p>
+                    <p><strong>Condition:</strong> {{ book.condition }}</p>
+                    <p><strong>Language:</strong> {{ book.language }}</p>
+                    <p><strong>Category:</strong> {{ book.category.category }}</p>
+                    <p><strong>Genre:</strong> {{ book.genre }}</p>
+                    <p><strong>Status:</strong> {{ book.status }}</p>
+                    <p><strong>Seller:</strong> {{ book.user_id.LOGIN.username }}</p>
+                </div>
+                <div class="book-description">
+                    <h4>Description</h4>
+                    <p>{{ book.description }}</p>
+                </div>
+                <!-- Back to book list or home -->
+                <div class="back-btn text-center">
+                    <a href="/userhome" class="btn btn-primary">Back to Book List</a>
+                </div>
+            </div>
+            <!-- Chat and Favorite Buttons -->
+            <div class="action-buttons">
+                {% if book.status == "Available" %}
+                <a href="/owner_chat_to_user/{{ book.id }}" class="btn btn-info btn-sm custom-btn-info">Chat</a>
+                 <a href="" class="btn btn-info btn-sm custom-btn-info">Buy</a>
+                {% endif %}
+                <i class="fas fa-heart heart-icon" data-book-id="{{ book.id }}"></i>
+            </div>
+        </div>
+
+      <!-- Related Books Section -->
+<div class="row gy-4 mt-5">
+    <h3>Related Books</h3>
+    {% for i in related_books %}
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+            <!-- Image Section -->
+            <div class="text-center position-relative">
+                <img src="{{ i.photo.url }}" alt="{{ i.Tittle }}" class="img-fluid rounded-top" style="object-fit: cover; height: 200px;">
+                <!-- Favorite Icon: Positioned top-right of the image -->
+                <div class="position-absolute top-0 end-0 p-2">
+                    <i class="fas fa-heart heart-icon" data-book-id="{{ i.id }}"></i>
+                </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body text-center">
+                <h5 class="card-title">{{ i.Tittle }}</h5>
+                <p><strong>Author:</strong> {{ i.Author }}</p>
+                <p><strong>Category:</strong> {{ i.category.category }}</p>
+                <p><strong>Status:</strong> {{ i.status }}</p>
+                <a href="/book_detail2/{{ i.id }}" class="btn btn-primary btn-sm custom-btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    // Select all heart icons
+    document.querySelectorAll('.heart-icon').forEach(function(icon) {
+      // Add click event listener to each heart icon
+      icon.addEventListener('click', function() {
+        const bookId = this.getAttribute('data-book-id');
+         $.ajax({
+                type: "GET",
+                url: "/addfav",
+                data: { bid: bookId },
+                success: function(data) {
+                    if (data.is_taken) {
+                        $('#email-message').text(data.error_message);
+                        $('#targetButton').prop('disabled', true);
+                    } else {
+                        $('#email-message').text("");
+                        $('#targetButton').prop('disabled', false);
+                    }
+                }
+            });
+        // Toggle the 'favorited' class
+
+
+
+        // Log the book ID to the console for now
+        console.log('Book ID added to favorites:', bookId);
+
+        // Future functionality for redirect or AJAX can go here
+        // window.location.href = '/favorites'; // Example for future redirect
+      });
+    });
+ this.classList.toggle('favorited');
+
+  });
+</script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+</body>
+</html>
+{% endblock %}
