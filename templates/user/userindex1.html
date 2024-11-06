@@ -163,7 +163,7 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="userhome" class="logo d-flex align-items-center me-auto">
+      <a href="/userhome" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="../static/admin/assets/img/logo1.png" class="logo-right" alt=""  width= 150px; height= auto;>
 {#        <h1 class="sitename">BookHive</h1>#}
@@ -172,11 +172,11 @@
       <nav id="navmenu" class="navmenu">
         <ul>
 {#          <li><a href="#hero" class="active">UserHome<br></a></li>#}
-          <li><a href="#about">Catogories</a></li>
+{#          <li><a href="#about">Catogories</a></li>#}
           <li><a href="/fav_view">Favorites</a></li>
-          <li><a href="sellerhome" class="logo d-flex align-items-center me-auto">Sell</a></li>
+          <li><a href="/sellerhome" class="logo d-flex align-items-center me-auto">Sell</a></li>
           <li><a href="/home_chat">Chats</a></li>
-            <li><a href="#team">Profile</a></li>
+            <li><a href="/profile">Profile</a></li>
 
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -198,39 +198,39 @@
       <!-- Placeholder for additional button if needed -->
     </div>
 
-<div class="row gy-4 mt-5">
-  <!-- Book Card 1 -->
-  {% for i in val %}
-  <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
-    <div class="card h-100 position-relative">
-      <!-- Favorite Icon in the top-right corner -->
-      <div class="position-absolute top-0 end-0 p-2">
-        <i class="fas fa-heart heart-icon" data-book-id="{{ i.id }}"></i>
-      </div>
-
-      <!-- Image Section -->
-      <div class="text-center mt-3">
-        <img src="{{ i.photo.url }}" alt="{{ i.Tittle }}" class="img-fluid rounded-top" style="object-fit: cover; height: 200px;">
-      </div>
-
-      <!-- Card Body -->
-      <div class="card-body text-center" style="background-color: #0ea8ac;">
-        <!-- Book Title -->
-        <h5 class="card-title">{{ i.Tittle }}</h5>
-        <!-- Author -->
-        <p class="card-text"><strong>Author:</strong> {{ i.Author }}</p>
-        <!-- Category -->
-        <p class="card-text"><strong>Category:</strong> {{ i.category.category }}</p>
-        <!-- Status -->
-        <p class="card-text"><strong>Status of Book:</strong> {{ i.status }}</p><br/>
-        <!-- Action Button -->
-        <a href="#" class="btn btn-primary btn-sm custom-btn-primary">View Details</a>
-      </div>
-    </div>
-  </div>
-  <!-- End Book Card 1 -->
-  {% endfor %}
-</div>
+{#<div class="row gy-4 mt-5">#}
+{#  <!-- Book Card 1 -->#}
+{#  {% for i in val %}#}
+{#  <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">#}
+{#    <div class="card h-100 position-relative">#}
+{#      <!-- Favorite Icon in the top-right corner -->#}
+{#      <div class="position-absolute top-0 end-0 p-2">#}
+{#        <i class="fas fa-heart heart-icon" data-book-id="{{ i.id }}"></i>#}
+{#      </div>#}
+{##}
+{#      <!-- Image Section -->#}
+{#      <div class="text-center mt-3">#}
+{#        <img src="{{ i.photo.url }}" alt="{{ i.Tittle }}" class="img-fluid rounded-top" style="object-fit: cover; height: 200px;">#}
+{#      </div>#}
+{##}
+{#      <!-- Card Body -->#}
+{#      <div class="card-body text-center" style="background-color: #0ea8ac;">#}
+{#        <!-- Book Title -->#}
+{#        <h5 class="card-title">{{ i.Tittle }}</h5>#}
+{#        <!-- Author -->#}
+{#        <p class="card-text"><strong>Author:</strong> {{ i.Author }}</p>#}
+{#        <!-- Category -->#}
+{#        <p class="card-text"><strong>Category:</strong> {{ i.category.category }}</p>#}
+{#        <!-- Status -->#}
+{#        <p class="card-text"><strong>Status of Book:</strong> {{ i.status }}</p><br/>#}
+{#        <!-- Action Button -->#}
+{#        <a href="#" class="btn btn-primary btn-sm custom-btn-primary">View Details</a>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#  <!-- End Book Card 1 -->#}
+{#  {% endfor %}#}
+{#</div>#}
 
   </div>
 

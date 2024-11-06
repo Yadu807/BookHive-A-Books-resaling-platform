@@ -1,4 +1,4 @@
-{#<!DOCTYPE html>#}
+
 <html lang="en">
 {% load static %}
 
@@ -28,13 +28,7 @@
   <!-- Main CSS File -->
   <link href="../static/admin/assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: OnePage
-  * Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body class="index-page">
@@ -42,42 +36,26 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="adminhome" class="logo d-flex align-items-center me-auto">
+      <a href="/adminhome" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="../static/admin/assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">BookHive</h1>
+        <img src="../static/admin/assets/img/logo1.png" class="logo-right" alt=""  width= 150px; height= auto;>
+{#        <h1 class="sitename">BookHive</h1>#}
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
 
-          <li><a href="#about">User Managment</a></li>
-          <li><a href="#services">Book Managment</a></li>
-          <li><a href="#portfolio">Reports</a></li>
-{#         #}
-{#          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>#}
-{#            <ul>#}
-{#              <li><a href="#">Dropdown 1</a></li>#}
-{#              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>#}
-{#                <ul>#}
-{#                  <li><a href="#">Deep Dropdown 1</a></li>#}
-{#                  <li><a href="#">Deep Dropdown 2</a></li>#}
-{#                  <li><a href="#">Deep Dropdown 3</a></li>#}
-{#                  <li><a href="#">Deep Dropdown 4</a></li>#}
-{#                  <li><a href="#">Deep Dropdown 5</a></li>#}
-{#                </ul>#}
-{#              </li>#}
-{#              <li><a href="#">Dropdown 2</a></li>#}
-{#              <li><a href="#">Dropdown 3</a></li>#}
-{#              <li><a href="#">Dropdown 4</a></li>#}
-{#            </ul>#}
-{#          </li>#}
-{#          <li><a href="#contact">Contact</a></li>#}
+          <li><a href="/manage-users">User Managment</a></li>
+          <li><a href="{% url 'admin_book_management' %}">Book Management</a></li>
+          <li><a href="{% url 'manage_categories' %}">Categories</a></li>
+
+          <li><a href="{% url 'admin_view_reports' %}">Reports</a></li>
+            <li><a href="/logout" class="d-flex align-items-center"><i class="bi bi-box-arrow-right custom-icon"></i> Logout</a></li>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-{#      <a class="btn-getstarted" href="#about">Get Started</a>#}
 
     </div>
   </header>
@@ -97,9 +75,7 @@
 
           </div>
         </div>
-{#        <div class="text-center" data-aos="zoom-out" data-aos-delay="100">#}
-{#          <a href="#about" class="btn-get-started">Get Started</a>#}
-{#        </div>#}
+
 
         <div class="row gy-4 mt-5">
           <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
@@ -129,7 +105,7 @@
           <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-command"></i></div>
-              <h4 class="title"><a href="">0</a></h4>
+              <h4 class="title"><a href="">{{ tu3 }}</a></h4>
               <p class="description">Total orders</p>
             </div>
           </div><!--End Icon Box -->
@@ -151,9 +127,6 @@
 
     </section><!-- /About Section -->
 
-
-
-
   </main>
 
   <footer id="footer" class="footer light-background">
@@ -163,10 +136,7 @@
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">OnePage</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>

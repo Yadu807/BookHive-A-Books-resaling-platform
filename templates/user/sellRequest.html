@@ -1,0 +1,54 @@
+{% extends "user/sellerindex1.html" %}
+{% block body %}
+
+
+
+
+<div class="container">
+<h1 class="text-center mb-4">Buyer Requests for Your Books</h1>
+    <table class="table table-bordered table-striped">
+
+        <thead class="thead-dark">
+            <tr>
+                <th>Book Title</th>
+                <th>Buyer Name</th>
+                <th>Request Date</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.BookID.Tittle }}</td>
+                <td>{{ order.BuyerID.name }}</td>
+                <td>{{ order.OrderDate }}</td>
+                <td>{{ order.Amount }}</td>
+                <td>{{ order.Status }}</td>
+                <td>
+                    {% if order.Status == "Requested" %}
+                        <a href="/accept_request/{{ order.id }}" class="btn btn-success btn-sm">Accept</a>
+                        <a href="/reject_request/{{ order.id }}" class="btn btn-danger btn-sm">Reject</a>
+
+                         {% elif order.Status == "Available" %}
+                        <span style="color: red;"> waiting for payment</span>
+                        {% elif order.Status == "Shipped" %}
+                        <span style="color: red;">waiting buyer responce</span>
+                        {% elif order.Status == "paid" %}
+                        <a href="/shipped_request/{{ order.id }}" class="btn btn-success btn-sm">Shipped</a>
+                    {% else %}
+                        {{ order.Status }}
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">No requests found for your books.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -2,49 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1acb78e-b2b2-4c85-b114-aca9230621c5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/chat_style/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/chat_style/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/chat_style/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/registration/terms.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/chat_style/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/chat_style/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/chat_style/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/static/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/BookViewBuy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/BookViewSell.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/Chat.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/favourites.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/fur_chat.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/userindex1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/view_favorite.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/My_app/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/My_app/migrations/0002_alter_user_table_email_alter_user_table_phone_and_more.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/My_app/migrations/0003_alter_user_table_phone.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/My_app/migrations/0004_user_table_username.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/My_app/migrations/0005_remove_user_table_username.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/My_app/migrations/0006_category_table_alter_login_table_password_and_more.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/My_app/migrations/0007_alter_user_table_name.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/My_app/migrations/0008_user_table_username_alter_user_table_email_and_more.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/My_app/migrations/0009_remove_book_table_language_remove_book_table_photo_and_more.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/My_app/migrations/0010_book_table_language_book_table_photo_and_more.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/My_app/migrations/0011_alter_login_table_username_alter_user_table_email.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/admin_book_management.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/admin_reports.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/adminindex2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/manage-users.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/manage_categories.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/Request.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/UserPayProceed.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/give_feedback.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/order_history.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/profile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/profileview.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/sellRequest.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user/userindex3.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/My_app/models.py" afterPath="$PROJECT_DIR$/My_app/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/My_app/urls.py" afterPath="$PROJECT_DIR$/My_app/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/My_app/views.py" afterPath="$PROJECT_DIR$/My_app/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/admin/assets/js/main.js" afterPath="$PROJECT_DIR$/static/admin/assets/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/loginindex.html" afterPath="$PROJECT_DIR$/templates/loginindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/adminindex.html" afterPath="$PROJECT_DIR$/templates/admin/adminindex.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/registration/regindex.html" afterPath="$PROJECT_DIR$/templates/registration/regindex.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user/AddBook.html" afterPath="$PROJECT_DIR$/templates/user/AddBook.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user/BookViewBuy.html" afterPath="$PROJECT_DIR$/templates/user/BookViewBuy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user/BookViewSell.html" afterPath="$PROJECT_DIR$/templates/user/BookViewSell.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user/UpdateBook.html" afterPath="$PROJECT_DIR$/templates/user/UpdateBook.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user/sellerindex.html" afterPath="$PROJECT_DIR$/templates/user/sellerindex.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user/sellerindex1.html" afterPath="$PROJECT_DIR$/templates/user/sellerindex1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user/sellerindex2.html" afterPath="$PROJECT_DIR$/templates/user/sellerindex2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user/userindex.html" afterPath="$PROJECT_DIR$/templates/user/userindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user/userindex1.html" afterPath="$PROJECT_DIR$/templates/user/userindex1.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,71 +44,71 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/My_app/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order_history.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/user/order_history.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="109" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userindex3.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/user/userindex3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2835">
+              <caret line="135" column="14" lean-forward="false" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/My_app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="18" />
+            <state relative-caret-position="1617">
+              <caret line="78" column="4" lean-forward="false" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_favorite.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/user/view_favorite.html">
+      <file leaf-file-name="adminindex.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin/adminindex.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="16" />
+            <state relative-caret-position="315">
+              <caret line="120" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="166" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="favourites.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/user/favourites.html">
+      <file leaf-file-name="adminindex2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin/adminindex2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="12" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="20" selection-end-column="12" />
+            <state relative-caret-position="1449">
+              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userindex1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/user/userindex1.html">
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/user/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3738">
-              <caret line="178" column="48" lean-forward="false" selection-start-line="178" selection-start-column="48" selection-end-line="178" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookViewBuy.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/user/BookViewBuy.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6972">
-              <caret line="332" column="8" lean-forward="false" selection-start-line="332" selection-start-column="8" selection-end-line="332" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fur_chat.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/user/fur_chat.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="767">
-              <caret line="346" column="39" lean-forward="false" selection-start-line="346" selection-start-column="39" selection-end-line="346" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/My_app/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="11" />
+            <state relative-caret-position="6657">
+              <caret line="317" column="14" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="317" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -132,8 +117,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/My_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5628">
-              <caret line="292" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="999" column="0" lean-forward="true" selection-start-line="999" selection-start-column="0" selection-end-line="999" selection-end-column="0" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
               </folding>
@@ -141,23 +126,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sellerindex.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/user/sellerindex.html">
+      <file leaf-file-name="admin_reports.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin/admin_reports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8379">
-              <caret line="399" column="26" lean-forward="false" selection-start-line="399" selection-start-column="26" selection-end-line="399" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="2877">
+              <caret line="137" column="82" lean-forward="false" selection-start-line="137" selection-start-column="82" selection-end-line="137" selection-end-column="82" />
+              <folding>
+                <element signature="n#style#0;n#h2#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userindex.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/user/userindex.html">
+      <file leaf-file-name="BookViewBuy.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/user/BookViewBuy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12495">
-              <caret line="595" column="0" lean-forward="false" selection-start-line="518" selection-start-column="1" selection-end-line="595" selection-end-column="0" />
+            <state relative-caret-position="9933">
+              <caret line="473" column="9" lean-forward="false" selection-start-line="473" selection-start-column="9" selection-end-line="473" selection-end-column="9" />
               <folding>
-                <element signature="e#15649#18351#0#HTML" expanded="false" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#11504#11511#1#HTML" expanded="true" />
+                <element signature="e#12653#12660#1#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,36 +177,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>search</find>
-      <find>login</find>
-      <find>eliza</find>
-      <find>user_id</find>
-      <find>chat_view</find>
-      <find>file</find>
-      <find>class=&quot;input-group-text attach_btn&quot;</find>
-      <find>chat_send</find>
-      <find>file-upload</find>
-      <find>class=&quot;col-md-8 col-xl-6 chat&quot;</find>
-      <find>upload_image</find>
-      <find>repeatEverySecond</find>
-      <find>test</find>
-      <find>alert</find>
-      <find>owner_chat_to_user</find>
-      <find>coun_msg</find>
-      <find>book_details3</find>
-      <find>Go to Home</find>
-      <find>home</find>
-      <find>userhome</find>
-      <find>favorites</find>
-      <find>home_chat</find>
-      <find>class=&quot;fas fa-ellipsis-v&quot;</find>
       <find>LOGIN</find>
       <find>chatview</find>
-      <find>fav_view</find>
       <find>book_detail2</find>
-      <find>book_detail3</find>
+      <find>log</find>
+      <find>sear</find>
+      <find>Buyer</find>
+      <find>userin</find>
+      <find>category_table()</find>
       <find>chat</find>
+      <find>owner_chat_to_user</find>
       <find>favorited</find>
+      <find>data-book-id</find>
+      <find>book_detail3</find>
+      <find>buynow</find>
+      <find>heart-icon</find>
+      <find>def Request</find>
+      <find>cate</find>
+      <find>fav_view</find>
+      <find>Request</find>
+      <find>Request(</find>
+      <find>sellerhome</find>
+      <find>sendfeedbackpost</find>
+      <find>sha384-KyZXEAg3QhqLMpG8r</find>
+      <find>suggestions-container</find>
+      <find>seller_request_view</find>
+      <find>userhome</find>
+      <find>sellerindex.html</find>
+      <find>adminh</find>
+      <find>logincode</find>
+      <find>book_de</find>
     </findStrings>
     <replaceStrings>
       <replace>../static/admin/assets</replace>
@@ -223,7 +225,6 @@
         <option value="$PROJECT_DIR$/BookHive/urls.py" />
         <option value="$PROJECT_DIR$/templates/addbook/AddBook.html" />
         <option value="$PROJECT_DIR$/templates/admin/adminindex1.html" />
-        <option value="$PROJECT_DIR$/templates/admin/adminindex.html" />
         <option value="$PROJECT_DIR$/static/login/css/style.css" />
         <option value="$PROJECT_DIR$/static/assets/css/main.css" />
         <option value="$PROJECT_DIR$/BookHive/settings.py" />
@@ -232,26 +233,41 @@
         <option value="$PROJECT_DIR$/static/admin/assets/js/main.js" />
         <option value="$PROJECT_DIR$/templates/loginindex.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/user/AddBook.html" />
-        <option value="$PROJECT_DIR$/templates/user/UpdateBook.html" />
         <option value="$PROJECT_DIR$/templates/registration/terms.html" />
-        <option value="$PROJECT_DIR$/templates/user/BookViewSell.html" />
         <option value="$PROJECT_DIR$/My_app/migrations/0013_alter_login_table_username_alter_user_table_email.py" />
-        <option value="$PROJECT_DIR$/templates/registration/regindex.html" />
         <option value="$PROJECT_DIR$/templates/ss.html" />
-        <option value="$PROJECT_DIR$/My_app/models.py" />
-        <option value="$PROJECT_DIR$/templates/user/sellerindex.html" />
-        <option value="$PROJECT_DIR$/templates/user/sellerindex1.html" />
-        <option value="$PROJECT_DIR$/templates/user/sellerindex2.html" />
-        <option value="$PROJECT_DIR$/templates/user/Chat.html" />
         <option value="$PROJECT_DIR$/templates/user/view_favorite.html" />
-        <option value="$PROJECT_DIR$/My_app/urls.py" />
-        <option value="$PROJECT_DIR$/templates/user/userindex.html" />
-        <option value="$PROJECT_DIR$/templates/user/userindex1.html" />
         <option value="$PROJECT_DIR$/templates/user/favourites.html" />
-        <option value="$PROJECT_DIR$/My_app/views.py" />
-        <option value="$PROJECT_DIR$/templates/user/BookViewBuy.html" />
         <option value="$PROJECT_DIR$/templates/user/fur_chat.html" />
+        <option value="$PROJECT_DIR$/templates/registration/regindex.html" />
+        <option value="$PROJECT_DIR$/templates/user/UpdateBook.html" />
+        <option value="$PROJECT_DIR$/templates/user/BookViewSell.html" />
+        <option value="$PROJECT_DIR$/templates/user/AddBook.html" />
+        <option value="$PROJECT_DIR$/templates/user/Chat.html" />
+        <option value="$PROJECT_DIR$/templates/user/sellerindex2.html" />
+        <option value="$PROJECT_DIR$/templates/user/UserPayProceed.html" />
+        <option value="$PROJECT_DIR$/templates/user/userindex1.html" />
+        <option value="$PROJECT_DIR$/templates/user/sellerindex1.html" />
+        <option value="$PROJECT_DIR$/templates/user/Request.html" />
+        <option value="$PROJECT_DIR$/templates/user/sellRequest.html" />
+        <option value="$PROJECT_DIR$/templates/user/userindex.html" />
+        <option value="$PROJECT_DIR$/templates/user/give_feedback.html" />
+        <option value="$PROJECT_DIR$/templates/admin/manage-users.html" />
+        <option value="$PROJECT_DIR$/templates/admin/admin_book_management.html" />
+        <option value="$PROJECT_DIR$/templates/admin/add_edit_category.html" />
+        <option value="$PROJECT_DIR$/templates/admin/manage_categories.html" />
+        <option value="$PROJECT_DIR$/My_app/models.py" />
+        <option value="$PROJECT_DIR$/templates/user/profile.html" />
+        <option value="$PROJECT_DIR$/templates/user/sellerindex.html" />
+        <option value="$PROJECT_DIR$/templates/user/profileview.html" />
+        <option value="$PROJECT_DIR$/templates/admin/adminindex2.html" />
+        <option value="$PROJECT_DIR$/templates/admin/admin_reports.html" />
+        <option value="$PROJECT_DIR$/templates/user/BookViewBuy.html" />
+        <option value="$PROJECT_DIR$/My_app/urls.py" />
+        <option value="$PROJECT_DIR$/templates/user/order_history.html" />
+        <option value="$PROJECT_DIR$/templates/user/userindex3.html" />
+        <option value="$PROJECT_DIR$/templates/admin/adminindex.html" />
+        <option value="$PROJECT_DIR$/My_app/views.py" />
       </list>
     </option>
   </component>
@@ -373,56 +389,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BookHive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BookHive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="registration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BookHive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BookHive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chat_style" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BookHive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BookHive" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="My_app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -450,21 +416,22 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BookHive (6)" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\static" />
-      <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\templates" />
-      <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\templates\user" />
-      <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\static\assets\img" />
-      <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\static\login\images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\templates\user" />
       <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\static" />
       <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\static\admin\assets\img" />
       <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\static\login\images" />
       <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\templates\admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\templates\admin" />
+      <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\templates\user" />
+      <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\static" />
+      <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\templates" />
+      <recent name="C:\Users\LENOVO\PycharmProjects\BookHive\static\assets\img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -696,15 +663,15 @@
     <frame x="-9" y="-9" width="1938" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17293233" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20515575" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33906072" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34593356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33763188" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33676976" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -725,9 +692,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33997655" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33763188" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16829532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34593356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33676976" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20247047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -746,127 +713,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/login/images/1.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/assets/vendor/animate.css/animate.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/assets/vendor/animate.css/animate.compat.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2142">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookHive/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/login/css/font-awesome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/assets/img/about.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/assets/img/apple-touch-icon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/assets/img/favicon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/assets/img/hero-bg-abstract.jpg" />
-    <entry file="file://$PROJECT_DIR$/templates/admin/adminindex1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/adminindex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-638">
-          <caret line="123" column="49" lean-forward="false" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/login/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/assets/img/logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/assets/img/BookHive.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BookHive/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="129" column="42" lean-forward="false" selection-start-line="129" selection-start-column="42" selection-end-line="129" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="848" column="3" lean-forward="false" selection-start-line="841" selection-start-column="0" selection-end-line="848" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/assets/scss/Readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/assets/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="987">
@@ -881,36 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/forgot_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3276">
-          <caret line="156" column="14" lean-forward="false" selection-start-line="156" selection-start-column="14" selection-end-line="156" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/loginindex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3612">
-          <caret line="172" column="0" lean-forward="false" selection-start-line="147" selection-start-column="3" selection-end-line="172" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/AddBook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2184">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/BookViewSell.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3927">
-          <caret line="187" column="14" lean-forward="false" selection-start-line="187" selection-start-column="14" selection-end-line="187" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/My_app/migrations/0013_alter_login_table_username_alter_user_table_email.py" />
     <entry file="file://$PROJECT_DIR$/My_app/migrations/0012_alter_book_table_description.py" />
     <entry file="file://$PROJECT_DIR$/My_app/migrations/0013_remove_user_table_email_alter_login_table_username.py" />
@@ -922,25 +743,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/UpdateBook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="191" column="41" lean-forward="false" selection-start-line="191" selection-start-column="41" selection-end-line="191" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/chat_style/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/regindex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3834">
-          <caret line="326" column="41" lean-forward="true" selection-start-line="326" selection-start-column="41" selection-end-line="326" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -979,73 +785,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/sellerindex1.html">
+    <entry file="file://$PROJECT_DIR$/BookHive/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="225" column="39" lean-forward="false" selection-start-line="225" selection-start-column="39" selection-end-line="225" selection-end-column="39" />
+        <state relative-caret-position="462">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/loginindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="157" column="19" lean-forward="false" selection-start-line="157" selection-start-column="19" selection-end-line="157" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/fur_chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7266">
+          <caret line="346" column="39" lean-forward="false" selection-start-line="346" selection-start-column="39" selection-end-line="346" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/UpdateBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4032">
+          <caret line="192" column="66" lean-forward="false" selection-start-line="192" selection-start-column="66" selection-end-line="192" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/user/sellerindex2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="231" column="39" lean-forward="false" selection-start-line="231" selection-start-column="39" selection-end-line="231" selection-end-column="39" />
+        <state relative-caret-position="468">
+          <caret line="234" column="37" lean-forward="false" selection-start-line="234" selection-start-column="37" selection-end-line="234" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/regindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="337" column="13" lean-forward="true" selection-start-line="294" selection-start-column="0" selection-end-line="337" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/BookViewSell.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/user/Chat.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2436">
-          <caret line="116" column="35" lean-forward="false" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
-          <folding>
-            <element signature="e#14637#17908#0#HTML" expanded="false" />
-            <element signature="e#17909#18029#0#HTML" expanded="false" />
-            <element signature="e#18032#18925#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/view_favorite.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="16" />
+        <state relative-caret-position="13272">
+          <caret line="632" column="0" lean-forward="false" selection-start-line="632" selection-start-column="0" selection-end-line="632" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/My_app/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/user/UserPayProceed.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="-1890">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/userindex1.html">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python310/Lib/site-packages/django/core/handlers/exception.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3738">
-          <caret line="178" column="48" lean-forward="false" selection-start-line="178" selection-start-column="48" selection-end-line="178" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="164">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/My_app/models.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python310/Lib/site-packages/django/core/handlers/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/userindex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12495">
-          <caret line="595" column="0" lean-forward="false" selection-start-line="518" selection-start-column="1" selection-end-line="595" selection-end-column="0" />
-          <folding>
-            <element signature="e#15649#18351#0#HTML" expanded="false" />
-          </folding>
+        <state relative-caret-position="867">
+          <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1057,36 +876,224 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/AddBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="220" column="0" lean-forward="true" selection-start-line="220" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/sellerindex1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="252" column="32" lean-forward="true" selection-start-line="252" selection-start-column="32" selection-end-line="252" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/sellRequest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="79" lean-forward="false" selection-start-line="36" selection-start-column="79" selection-end-line="36" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/Request.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1827">
+          <caret line="87" column="57" lean-forward="false" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/userindex1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <marker date="1729495772287" expanded="false" signature="6044:6077" ph="..." />
+            <marker date="1729495772287" expanded="false" signature="6183:6209" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/userindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5712">
+          <caret line="272" column="1" lean-forward="false" selection-start-line="272" selection-start-column="1" selection-end-line="272" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/view_favorite.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/forgot_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/give_feedback.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="98" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/adminindex1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1512">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/add_edit_category.html" />
+    <entry file="file://$PROJECT_DIR$/templates/admin/manage-users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/manage_categories.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/sellerindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1082">
+          <caret line="539" column="0" lean-forward="true" selection-start-line="539" selection-start-column="0" selection-end-line="539" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/profileview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/admin_book_management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4858">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/adminindex2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1449">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/admin_reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2877">
+          <caret line="137" column="82" lean-forward="false" selection-start-line="137" selection-start-column="82" selection-end-line="137" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user/BookViewBuy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6972">
-          <caret line="332" column="8" lean-forward="false" selection-start-line="332" selection-start-column="8" selection-end-line="332" selection-end-column="8" />
+        <state relative-caret-position="9933">
+          <caret line="473" column="9" lean-forward="false" selection-start-line="473" selection-start-column="9" selection-end-line="473" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#11504#11511#1#HTML" expanded="true" />
+            <element signature="e#12653#12660#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/My_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1617">
+          <caret line="78" column="4" lean-forward="false" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6657">
+          <caret line="317" column="14" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="317" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/userindex3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2835">
+          <caret line="135" column="14" lean-forward="false" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/adminindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="120" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="166" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/order_history.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="109" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/My_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5628">
-          <caret line="292" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="999" column="0" lean-forward="true" selection-start-line="999" selection-start-column="0" selection-end-line="999" selection-end-column="0" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/sellerindex.html">
+    <entry file="file://$PROJECT_DIR$/My_app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8379">
-          <caret line="399" column="26" lean-forward="false" selection-start-line="399" selection-start-column="26" selection-end-line="399" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/fur_chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="346" column="39" lean-forward="false" selection-start-line="346" selection-start-column="39" selection-end-line="346" selection-end-column="39" />
+        <state relative-caret-position="63">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="43" />
           <folding />
         </state>
       </provider>

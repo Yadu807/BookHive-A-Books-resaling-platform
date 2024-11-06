@@ -210,6 +210,41 @@
 /*card design end */
 
 
+          /* Custom styles for the modal */
+        .modal-custom {
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
+        .modal-header-custom {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .modal-body-custom {
+            padding: 1.5rem;
+        }
+
+        .modal-footer-custom {
+            display: flex;
+            justify-content: flex-end;
+            border-top: none;
+            padding: 1rem;
+        }
+
+        .modal-footer-custom .btn {
+            margin-left: 10px;
+        }
+
+        .modal-content-custom {
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+
     </style>
 
      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -227,6 +262,7 @@
     </style>
 </head>
 <body>
+
     <div class="container mt-5">
         <!-- Large Book Detail Card -->
         <div class="book-detail-container p-4">
@@ -246,28 +282,59 @@
                     <p><strong>Category:</strong> {{ book.category.category }}</p>
                     <p><strong>Genre:</strong> {{ book.genre }}</p>
                     <p><strong>Status:</strong> {{ book.status }}</p>
-                    <p><strong>Seller:</strong> {{ book.user_id.LOGIN.username }}</p>
+                    <p><strong>Seller:</strong>
+                       <a href="{% url 'view_profile' book.user_id.id %}" class="btn btn-outline-primary btn-sm">
+                          {{ book.user_id.LOGIN.username }}
+                       </a>
+                    </p>
+
+
                 </div>
                 <div class="book-description">
                     <h4>Description</h4>
                     <p>{{ book.description }}</p>
                 </div>
-                <!-- Back to book list or home -->
-                <div class="back-btn text-center">
-                    <a href="/userhome" class="btn btn-primary">Back to Book List</a>
-                </div>
+               <!-- Back to Book List and Report Buttons -->
+            <div class="back-btn text-center">
+                <a href="/userhome" class="btn btn-primary">Back to Book List</a>
+                <!-- Report Button to Trigger Modal -->
+{#                <button class="btn btn-danger ml-2" data-toggle="modal" data-target="#reportModal">Report</button>#}
+            </div>
+
             </div>
             <!-- Chat and Favorite Buttons -->
             <div class="action-buttons">
                 {% if book.status == "Available" %}
-                <a href="/owner_chat_to_user/{{ book.id }}" class="btn btn-info btn-sm custom-btn-info">Chat</a>
-                 <a href="" class="btn btn-info btn-sm custom-btn-info">Buy</a>
+                <a href="/owner_chat_to_user/{{ book.user_id.LOGIN.id }}" class="btn btn-info btn-sm custom-btn-info">Chat</a>
+               <!-- Buy Button -->
+            <button class="btn btn-info btn-sm custom-btn-info" data-toggle="modal" data-target="#buyModal">Buy</button>
+
                 {% endif %}
-                <i class="fas fa-heart heart-icon" data-book-id="{{ book.id }}"></i>
+                {% if book.s %}
+               <i class="fas fa-heart heart-icon favorited" data-book-id="{{ book.id }}"></i>
+          {% else %}
+        <i class="fas fa-heart heart-icon" data-book-id="{{ book.id }}"></i>
+          {% endif %}
+
             </div>
+
+        <!-- Ellipsis Icon Button -->
+<div style="position: relative;">
+    <!-- Ellipsis Icon Button in the Upper Right Corner with Dropdown Toggle -->
+    <button class="btn btn-light" id="ellipsisBtn" onclick="toggleReportLink()" style="position: absolute; top: 0; right: 0;">
+        &#8230; <!-- Ellipsis character -->
+    </button>
+
+    <!-- Dropdown Menu with Report Link, initially hidden -->
+    <div id="reportDropdown" class="dropdown-menu shadow" aria-labelledby="ellipsisBtn" style="position: absolute; top: 30px; right: 0; display: none;">
+        <a href="#" class="dropdown-item text-danger" data-toggle="modal" data-target="#reportModal">Report</a>
+    </div>
+</div>
+
         </div>
 
       <!-- Related Books Section -->
+    {% if related_books %}
 <div class="row gy-4 mt-5">
     <h3>Related Books</h3>
     {% for i in related_books %}
@@ -278,7 +345,11 @@
                 <img src="{{ i.photo.url }}" alt="{{ i.Tittle }}" class="img-fluid rounded-top" style="object-fit: cover; height: 200px;">
                 <!-- Favorite Icon: Positioned top-right of the image -->
                 <div class="position-absolute top-0 end-0 p-2">
-                    <i class="fas fa-heart heart-icon" data-book-id="{{ i.id }}"></i>
+                    {% if book.s %}
+               <i class="fas fa-heart heart-icon favorited" data-book-id="{{ book.id }}"></i>
+          {% else %}
+        <i class="fas fa-heart heart-icon" data-book-id="{{ book.id }}"></i>
+          {% endif %}
                 </div>
             </div>
 
@@ -294,12 +365,68 @@
     </div>
     {% endfor %}
 </div>
+    {% endif %}
     </div>
+
+
+    <!-- Report Modal -->
+<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reportModalLabel">Report Book</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{% url 'report_book' book.id %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="complaintText">Complaint</label>
+                        <textarea id="complaintText" name="complaint_text" class="form-control" rows="4" placeholder="Describe your complaint"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Submit Report</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Buy Modal -->
+<div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="buyModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="buyModalLabel">Enter Amount</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="buyForm" method="post" action="/buynow/">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="amount">Amount (₹):</label>
+                        <input type="number" class="form-control" id="amount" name="amt" placeholder="Enter amount" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary" form="buyForm">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
    <script>
    document.addEventListener('DOMContentLoaded', function() {
     // Select all heart icons
@@ -326,17 +453,25 @@
 
 
         // Log the book ID to the console for now
+
         console.log('Book ID added to favorites:', bookId);
 
         // Future functionality for redirect or AJAX can go here
         // window.location.href = '/favorites'; // Example for future redirect
       });
     });
+    console.log(this.classList);
  this.classList.toggle('favorited');
 
   });
 </script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+    function toggleReportLink() {
+        const reportDropdown = document.getElementById("reportDropdown");
+        reportDropdown.style.display = reportDropdown.style.display === "none" ? "block" : "none";
+    }
+</script>
 
 </body>
 </html>

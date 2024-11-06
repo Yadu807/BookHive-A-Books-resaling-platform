@@ -1,4 +1,4 @@
-{% extends "user/sellerindex2.html" %}
+{% extends "user/sellerindex1.html" %}
 {% block body %}
 
 
@@ -163,7 +163,7 @@
     <!-- Price Field with HTML5 Validation -->
     <div class="mb-3">
         <label for="price">Price</label>
-        <input type="number" class="form-control" id="price" name="price" placeholder="Enter the price" min="0" required>
+        <input type="number" class="form-control" id="price" name="price" placeholder="Enter the price" min="0" title="Please enter a valid price. The value must be a number greater than or equal to 0." required>
 
     </div>
 

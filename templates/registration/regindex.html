@@ -198,7 +198,7 @@
 
                 <div class="form-group">
                     <label for="uname">Username</label>
-                    <input type="text" class="form-control" id="uname" name="uname" placeholder="Username" required>
+                    <input type="text" class="form-control" id="uname" name="uname" placeholder="Username"  required minlength="3" maxlength="20" pattern="[a-zA-Z0-9_]+" title="Username can only contain letters, numbers, and underscores, and must be between 3 and 20 characters long.">
                     <p id="username-message" class="error"></p> <!-- Username validation message -->
                 </div>
 

@@ -1,0 +1,114 @@
+{% extends "user/userindex3.html" %}
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order History</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+{#<nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+{#  <div class="container-fluid">#}
+{#    <a class="navbar-brand" href="/">BookHive</a>#}
+{#    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">#}
+{#      <span class="navbar-toggler-icon"></span>#}
+{#    </button>#}
+{#    <div class="collapse navbar-collapse" id="navbarNav">#}
+{#      <ul class="navbar-nav ms-auto">#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/profile">Profile</a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link active" aria-current="page" href="/order-history">Order History</a>#}
+{#        </li>#}
+{#      </ul>#}
+{#    </div>#}
+{#  </div>#}
+{#</nav>#}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Order History</h1>
+
+    <!-- Section for Purchased Books -->
+    <div class="card shadow mb-4">
+        <div class="card-header bg-primary text-white">
+            <h2>Purchased Books</h2>
+        </div>
+        <div class="card-body">
+            {% if buy_orders %}
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Price</th>
+                                <th>Order Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in buy_orders %}
+                            <tr>
+                                <td>{{ order.BookID.Tittle }}</td>
+                                <td>{{ order.BookID.Author }}</td>
+                                <td>₹{{ order.Amount }}</td>
+                                <td>{{ order.OrderDate }}</td>
+                                <td><span class="badge bg-success">{{ order.Status }}</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <p class="text-muted">No purchases found.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Section for Sold Books -->
+    <div class="card shadow mb-4">
+        <div class="card-header bg-success text-white">
+            <h2>Sold Books</h2>
+        </div>
+        <div class="card-body">
+            {% if sell_orders %}
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Title</th>
+                                <th>Buyer Name</th>
+                                <th>Price</th>
+                                <th>Order Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in sell_orders %}
+                            <tr>
+                                <td>{{ order.BookID.Tittle }}</td>
+                                <td>{{ order.BuyerID.name }}</td>
+                                <td>₹{{ order.Amount }}</td>
+                                <td>{{ order.OrderDate }}</td>
+                                <td><span class="badge bg-info">{{ order.Status }}</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <p class="text-muted">No sales found.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

@@ -137,14 +137,14 @@
                 <!-- Book Title Field -->
                 <div class="mb-3">
                     <label for="title">Book Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter the book title" pattern=".{1,100}" required value="{{ i.Tittle }}">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter the book title" pattern=".{1,100}" title="Book title should be between 1 and 100 characters" required value="{{ i.Tittle }}">
                 </div>
 
                 <!-- Author Field -->
 
                 <div class="mb-3">
                     <label for="author">Author</label>
-                    <input type="text" class="form-control" id="author" name="author" placeholder="Enter the author's name" pattern="[A-Za-z\s]+" required value="{{ i.Author }}">
+                    <input type="text" class="form-control" id="author" name="author" placeholder="Enter the author's name" pattern="[A-Za-z\s]+" title="Author name should only contain letters" required value="{{ i.Author }}">
                 </div>
 
                 <!-- Condition Field -->

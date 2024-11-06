@@ -1,0 +1,160 @@
+{% extends "user/userindex1.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Orders</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <style>
+        .card {
+            transition: transform 0.2s, box-shadow 0.2s; /* Animation for hover effect */
+            border-radius: 12px; /* Rounded corners for cards */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        .card:hover {
+            transform: scale(1.05); /* Scale effect on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+        }
+        .card img {
+            border-top-left-radius: 12px; /* Rounded corners for the image */
+            border-top-right-radius: 12px; /* Rounded corners for the image */
+            object-fit: cover;
+            height: 200px;
+            width: 100%; /* Full-width image */
+        }
+        .btn {
+            padding: 5px 10px; /* Smaller padding for buttons */
+            font-size: 0.9rem; /* Smaller font size for buttons */
+            border-radius: 8px; /* Rounded corners for buttons */
+            transition: background-color 0.3s, transform 0.2s; /* Transition for hover effects */
+        }
+        .btn-danger {
+            background-color: #dc3545; /* Custom danger color */
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker shade on hover */
+            transform: translateY(-2px); /* Slight upward movement on hover */
+        }
+        .btn-success {
+            background-color: #28a745; /* Custom success color */
+            border: none;
+        }
+        .btn-success:hover {
+            background-color: #218838; /* Darker shade on hover */
+            transform: translateY(-2px); /* Slight upward movement on hover */
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Your Book Orders</h2>
+    <div class="row gy-4">
+        <!-- Iterate through each book object (val contains the book info) -->
+        {% for i in val %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <!-- Image Section -->
+                    <div class="text-center">
+                        <img src="{{ i.BookID.photo.url }}" alt="{{ i.BookID.Tittle }}" class="img-fluid rounded-top">
+                    </div>
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <!-- Book Title -->
+                        <h5 class="card-title">{{ i.BookID.Tittle }}</h5>
+                        <!-- Author -->
+                        <p class="card-text"><strong>Author:</strong> {{ i.BookID.Author }}</p>
+                        <!-- Category -->
+                        <p class="card-text"><strong>Category:</strong> {{ i.BookID.category.category }}</p>
+                        <!-- Status -->
+                        <p class="card-text"><strong>Status of Book:</strong> {{ i.Status }}</p>
+                        <br/>
+                        <!-- Action Buttons: Cancel and Pay -->
+                        <div class="d-flex justify-content-center">
+                            {% if i.Status == "Requested" %}
+                                <a href="/request_view_cancel/{{ i.id }}" class="btn btn-danger btn-sm me-2">Cancel</a>
+                            {% elif i.Status == "Available" %}
+                                <a href="/user_pay_proceed/{{ i.id }}/{{ i.Amount }}" class="btn btn-success btn-sm">Pay</a>
+                            {% elif i.Status == "Recieved" %}
+                                <a href="/provide_feedback/{{ i.BookID.user_id.id }}" class="btn btn-success btn-sm">Feedback</a>
+                            {% elif i.Status == "Rejected" %}
+                                <a href="/request_view_remove/{{ i.id }}" class="btn btn-danger btn-sm me-2">Remove</a>
+                            {% elif i.Status == "Shipped" %}
+                                <a href="/request_view_remove/{{ i.id }}" class="btn btn-success btn-sm me-2">Recieved</a>
+                            {% elif i.Status == "paid" %}
+                               <span style="color: red;">waiting for shipment</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- See More and Show Less Buttons -->
+    <div class="text-center mt-4">
+        <button id="seeMoreBtn" class="btn btn-primary btn-sm" style="display: none;">See More</button>
+        <button id="showLessBtn" class="btn btn-primary btn-sm" style="display: none;">Show Less</button>
+    </div>
+</div>
+
+<script>
+    let visibleItems = 6; // Number of initially visible items
+    const items = document.querySelectorAll('.row > div'); // Get all card elements
+    const seeMoreBtn = document.getElementById('seeMoreBtn');
+    const showLessBtn = document.getElementById('showLessBtn');
+
+    function showMore() {
+        for (let i = visibleItems; i < visibleItems + 3 && i < items.length; i++) {
+            items[i].style.display = 'block'; // Show next 3 items
+        }
+        visibleItems += 3;
+
+        // Hide "See More" button if all items are visible
+        if (visibleItems >= items.length) {
+            seeMoreBtn.style.display = 'none';
+            showLessBtn.style.display = 'inline-block';
+        }
+    }
+
+    function showLess() {
+        // Show only the initially visible items
+        items.forEach((item, index) => {
+            if (index >= 6) { // Change to 6 to show only the first 6 items
+                item.style.display = 'none';
+            }
+        });
+
+        visibleItems = 6; // Reset visible items count
+
+        // Show "See More" button again
+        seeMoreBtn.style.display = 'inline-block';
+        showLessBtn.style.display = 'none'; // Hide "Show Less" button
+    }
+
+    // Initialize: Hide all items beyond the initial set
+    items.forEach((item, index) => {
+        if (index >= visibleItems) {
+            item.style.display = 'none';
+        }
+    });
+
+    // Check and toggle the visibility of the buttons initially
+    if (items.length > visibleItems) {
+        seeMoreBtn.style.display = 'inline-block'; // Show "See More" button if there are more items
+    } else {
+        seeMoreBtn.style.display = 'none'; // Hide "See More" button if no additional items
+    }
+    showLessBtn.style.display = 'none'; // Hide "Show Less" button initially
+
+    // Attach event listeners
+    seeMoreBtn.onclick = showMore;
+    showLessBtn.onclick = showLess;
+</script>
+
+
+</body>
+</html>
+{% endblock %}

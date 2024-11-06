@@ -343,7 +343,7 @@ body.modal-open {
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
         <!-- Logo -->
-        <a href="userhome" class="logo d-flex align-items-center" style="margin-left: -100px;">
+        <a href="/userhome" class="logo d-flex align-items-center" style="margin-left: -100px;">
             <img src="../static/admin/assets/img/logo1.png" alt="BookHive Logo" width="150px" height="auto">
         </a>
 
@@ -353,11 +353,11 @@ body.modal-open {
                 <li class="nav-item">
                     <a href="addbook" class="nav-link">Add a Book</a>
                 </li>
+{#                <li class="nav-item">#}
+{#                    <a href="#about" class="nav-link">Categories</a>#}
+{#                </li>#}
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">Categories</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#services" class="nav-link">Favorites</a>
+                    <a href="/fav_view" class="nav-link">Favorites</a>
                 </li>
                 <li class="nav-item">
                     <a href="userhome" class="nav-link">Buy</a>
@@ -366,7 +366,11 @@ body.modal-open {
                     <a href="/home_chat" class="nav-link">Chats</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#team" class="nav-link">Profile</a>
+    <a href="/seller_request_view" class="nav-link">Requests {{ request.session.ps }}</a>
+</li>
+
+                <li class="nav-item">
+                    <a href="/profile" class="nav-link">Profile</a>
                 </li>
             </ul>
         </nav>
@@ -390,7 +394,6 @@ body.modal-open {
             <div class="input-group">
                 <!-- Filter Dropdown with Icon (Commented Out for Now) -->
                 <div class="input-group-prepend">
-                    <!-- Commented out properly -->
 
                     <select name="cat" class="form-select form-select-lg" aria-label="Category Select">
                         <option value="0">All</option>
@@ -498,49 +501,43 @@ body.modal-open {
 
 </section>
 
-<!-- Resale Statistics Section -->
+
+<!-- Add this section somewhere in sellerindex.html -->
 <section class="resale-statistics mt-5">
     <div class="container">
-        <h2 class="text-center mb-4">Resale Statistics</h2>
+        <h2 class="text-center mb-4">Sales Statistics</h2>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card bg-light shadow-sm p-4">
                     <div class="card-body">
-                        <h5 class="card-title">Total Books Resold</h5>
-                        <p class="card-text fs-4">{{ total_books_resold }} books</p>
+                        <h5 class="card-title">Total Books Sold</h5>
+                        <p class="card-text fs-4">{{ total_books_sold }} books</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card bg-light shadow-sm p-4">
                     <div class="card-body">
-                        <h5 class="card-title">Total Active Listings</h5>
-                        <p class="card-text fs-4">{{ total_active_listings }} books</p>
+                        <h5 class="card-title">Total Sales Amount</h5>
+                        <p class="card-text fs-4">₹{{ total_sales_amount }}</p>
                     </div>
                 </div>
             </div>
         </div>
-
+        {% if most_sold_book %}
         <div class="row justify-content-center mt-4">
             <div class="col-md-6">
                 <div class="card bg-light shadow-sm p-4">
                     <div class="card-body">
-                        <h5 class="card-title">Most Resold Book</h5>
-                        <p class="card-text fs-5"><strong>{{ most_resold_book_title }}</strong> with <strong>{{ most_resold_book_count }}</strong> resales</p>
+                        <h5 class="card-title">Most Sold Book</h5>
+                        <p class="card-text fs-5"><strong>{{ most_sold_book.BookID__title }}</strong> with <strong>{{ most_sold_book.total_sales }}</strong> sales</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card bg-light shadow-sm p-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Top Seller</h5>
-                        <p class="card-text fs-5"><strong>{{ top_seller }}</strong> with <strong>{{ top_seller_books_count }}</strong> books sold</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endif %}
     </div>
 </section>
+
 
 
 

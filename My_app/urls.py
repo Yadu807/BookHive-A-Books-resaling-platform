@@ -4,6 +4,8 @@ from My_app import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('login', views.login, name='login'),  # Add name='login' here
+    path('logout', views.logout_view, name='logout'),
+
     path('forgotpassword', views.forgotpassword, name='forgotpassword'),
     path('forgot_password_post', views.forgot_password_post, name='forgot_password_post'),  # For form submission
     path('checkemail', views.checkemail, name='checkemail'),  # For form submission
@@ -40,4 +42,40 @@ urlpatterns = [
 
     path('favorites', views.favorites_view, name='favorites'),  # Favorites view
     path('fav_view', views.fav_view, name='fav_view'),  # Favorites view
+
+    path('profile/', views.profile_view, name='profile'),
+    path('update_profile/', views.update_profile_view, name='update_profile'),
+    path('get-previous-keywords/', views.get_previous_keywords, name='get_previous_keywords'),
+    path('buynow/', views.buynow, name='buynow'),
+    path('Request/', views.request_view, name='request_view'),
+    path('on_payment_success', views.on_payment_success, name='on_payment_success'),
+    path('user_pay_proceed/<int:id>/<int:amt>', views.user_pay_proceed, name='user_pay_proceed'),
+
+    path('seller_request_view', views.seller_request_view, name='seller_request_view'),
+    path('accept_request/<int:id>', views.accept_request, name='accept_request'),
+    path('reject_request/<int:id>', views.reject_request, name='reject_request'),
+    path('shipped_request/<int:id>', views.shipped_request, name='shipped_request'),
+
+    path('request_view_cancel/<int:id>', views.request_view_cancel, name='request_view_cancel'),
+    path('request_view_remove/<int:id>', views.request_view_remove, name='request_view_remove'),
+    path('request_view_recieved/<int:id>', views.request_view_recieved, name='request_view_recieved'),
+
+    path('provide_feedback/<int:id>', views.provide_feedback, name='provide_feedback'),
+    path('sendfeedbackpost/', views.sendfeedbackpost, name='sendfeedbackpost'),
+
+
+    path('profile/<int:user_id>/', views.view_profile, name='view_profile'),
+
+    path('manage-users/', views.manage_users, name='manage-users'),  # Ensure name is 'manage-users
+    path('book-management/', views.admin_book_management, name='admin_book_management'),
+    path('delete-book/<int:book_id>/', views.delete_book, name='delete_book'),
+    path('manage-categories/', views.manage_categories, name='manage_categories'),
+
+    path('report_book/<int:book_id>/', views.report_book, name='report_book'),
+    path('sales_statistics', views.sales_statistics, name='sales_statistics'),
+    path('reports/', views.admin_view_reports, name='admin_view_reports'),
+    path('delete_book/<int:book_id>/', views.delete_book, name='delete_book'),
+
+    path('order-history/', views.order_history, name='order_history'),
+
 ]

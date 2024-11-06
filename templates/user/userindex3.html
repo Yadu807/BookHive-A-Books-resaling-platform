@@ -1,0 +1,315 @@
+{#<!DOCTYPE html>#}
+<html lang="en">
+{% load static %}
+
+<head>
+    <style>
+    /* General card styling */
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-img-top {
+        object-fit: cover;
+        height: 200px; /* Ensure image has a fixed height */
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        margin-bottom: 0.5rem;
+    }
+
+    .btn {
+        font-size: 0.875rem; /* Adjust button font size */
+        padding: 0.5rem 1rem; /* Adjust button padding */
+        border-radius: 5px;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+        border-color: #d39e00;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-content-center {
+        justify-content: center;
+    }
+
+    .gap-2 {
+        gap: 0.5rem;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .mt-3 {
+        margin-top: 1rem;
+    }
+
+{#        logo#}
+
+        .logo-right {
+  width: 150px;
+  height: auto;
+  margin-left: 20px; /* Adjust the value as needed */
+
+}
+
+
+ /* Default style for the heart icon (not favorited) */
+  .heart-icon {
+    font-size: 24px;
+    color: #ccc; /* Default color (gray) */
+    cursor: pointer;
+  }
+
+  /* Style for the heart icon when favorited */
+  .favorited {
+    color: red !important; /* Favorited color (red) */
+
+  }
+
+        .logo-right {
+  width: 150px;
+  height: auto;
+  margin-left: 40px; /* Adjust the value as needed */
+}
+
+        .custom-icon {
+    font-size: 5.5rem; /* Adjust the size as needed */
+    margin-right: 3px; /* Optional: Adds some space between icon and text */
+}
+
+
+        #navmenu ul li a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps the original text color */
+}
+
+/* Optional: Style for when the link is hovered over */
+#navmenu ul li a:hover {
+    color: #ffff; /* Change color on hover if needed */
+    text-decoration: none;
+}
+
+
+</style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - OnePage Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="../static/admin/assets/img/favicon.png" rel="icon">
+  <link href="../static/admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/admin/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/admin/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/admin/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Include Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- Include Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+
+
+
+
+  <!-- Main CSS File -->
+  <link href="../static/admin/assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="/userhome" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="../static/admin/assets/img/logo1.png" class="logo-right" alt=""  width= 150px; height= auto;>
+{#        <h1 class="sitename">BookHive</h1>#}
+      </a>
+
+     <nav id="navmenu" class="navmenu">
+    <ul>
+        <li><a href="/fav_view">Favorites</a></li>
+        <li><a href="/sellerhome" class="logo d-flex align-items-center me-auto">Sell</a></li>
+        <li><a href="/home_chat">Chats</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="{% url 'order_history' %}">Order History</a></li>
+       <li><a href="/logout" class="d-flex align-items-center"><i class="bi bi-box-arrow-right custom-icon"></i> Logout</a></li>
+
+    </ul>
+    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+
+{#      <a class="btn-getstarted" href="#about">Get Started</a>#}
+
+    </div>
+  </header>
+
+  <main class="main">
+
+
+     {% block body %}
+        {% endblock %}
+
+
+    <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
+      <!-- Placeholder for additional button if needed -->
+    </div>
+
+<div class="row gy-4 mt-5">
+  <!-- Book Card 1 -->
+  {% for i in val %}
+  <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+    <div class="card h-100 position-relative">
+      <!-- Favorite Icon in the top-right corner -->
+      <div class="position-absolute top-0 end-0 p-2">
+        <i class="fas fa-heart heart-icon" data-book-id="{{ i.id }}"></i>
+      </div>
+
+      <!-- Image Section -->
+      <div class="text-center mt-3">
+        <img src="{{ i.photo.url }}" alt="{{ i.Tittle }}" class="img-fluid rounded-top" style="object-fit: cover; height: 200px;">
+      </div>
+
+      <!-- Card Body -->
+      <div class="card-body text-center" style="background-color: #0ea8ac;">
+        <!-- Book Title -->
+        <h5 class="card-title">{{ i.Tittle }}</h5>
+        <!-- Author -->
+        <p class="card-text"><strong>Author:</strong> {{ i.Author }}</p>
+        <!-- Category -->
+        <p class="card-text"><strong>Category:</strong> {{ i.category.category }}</p>
+        <!-- Status -->
+        <p class="card-text"><strong>Status of Book:</strong> {{ i.status }}</p><br/>
+        <!-- Action Button -->
+        <a href="#" class="btn btn-primary btn-sm custom-btn-primary">View Details</a>
+      </div>
+    </div>
+  </div>
+  <!-- End Book Card 1 -->
+  {% endfor %}
+</div>
+
+  </div>
+
+</section><!-- /Hero Section -->
+
+
+
+  </main>
+<footer id="footer" class="footer light-background py-3">
+
+    <div class="container copyright text-center mt-4">
+        <p>© <span>2024</span> <strong class="px-1 sitename">BookHive</strong> <span>All Rights Reserved</span></p>
+        <div class="credits">
+            <!-- You can add custom links or messages here -->
+            Designed by <a href="#">Your Team Name</a>
+        </div>
+    </div>
+
+</footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/admin/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../static/admin/assets/vendor/aos/aos.js"></script>
+  <script src="../static/admin/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/admin/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/admin/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/admin/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../static/admin/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../static/admin/assets/js/main.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all heart icons
+    document.querySelectorAll('.heart-icon').forEach(function(icon) {
+      // Add click event listener to each heart icon
+      icon.addEventListener('click', function() {
+        const bookId = this.getAttribute('data-book-id');
+
+        // Toggle the 'favorited' class
+        this.classList.toggle('favorited');
+
+        // Log the book ID to the console for now
+        console.log('Book ID added to favorites:', bookId);
+
+        // Future functionality for redirect or AJAX can go here
+        // window.location.href = '/favorites'; // Example for future redirect
+      });
+    });
+  });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+{% extends "admin/adminindex2.html" %}
+{% block body %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4" style="color: #068196;">Reported Books</h2>
+
+    <table class="table table-hover mt-4">
+        <thead>
+            <tr style="background-color: #068196; color: white;">
+                <th>Book Title</th>
+                <th>Reported By</th>
+                <th>Seller</th>
+                <th>Complaint Text</th>
+                <th>Reported At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in reports %}
+            <tr>
+                <!-- Book Title with Modal Trigger -->
+                <td>
+                    <a href="#" class="text-decoration-none" style="color: #068196;" data-bs-toggle="modal" data-bs-target="#bookModal{{ report.book.id }}">
+                        {{ report.book.Tittle }}
+                    </a>
+                </td>
+
+                <!-- Reported By User with Modal Trigger -->
+                <td>
+                    <a href="#" class="text-decoration-none" style="color: #068196;" data-bs-toggle="modal" data-bs-target="#userModalReporter{{ report.user.id }}">
+                        {{ report.user.name }}
+                    </a>
+                </td>
+
+                <!-- Seller User with Modal Trigger -->
+                <td>
+                    <a href="#" class="text-decoration-none" style="color: #068196;" data-bs-toggle="modal" data-bs-target="#userModalSeller{{ report.book.user_id.id }}">
+                        {{ report.book.user_id.name }}
+                    </a>
+                </td>
+
+                <td>{{ report.complaint_text }}</td>
+                <td>{{ report.reported_at|date:"Y-m-d H:i" }}</td>
+
+                <!-- Delete Book Button with Modal Trigger -->
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal{{ report.book.id }}">
+                        Delete Book
+                    </button>
+                </td>
+            </tr>
+
+            <!-- Book Details Modal -->
+            <div class="modal fade" id="bookModal{{ report.book.id }}" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #068196; color: white;">
+                            <h5 class="modal-title">Book Details: {{ report.book.Tittle }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Author:</strong> {{ report.book.Author }}</li>
+                                <li class="list-group-item"><strong>Genre:</strong> {{ report.book.genre }}</li>
+                                <li class="list-group-item"><strong>Condition:</strong> {{ report.book.condition }}</li>
+                                <li class="list-group-item"><strong>Price:</strong> ₹{{ report.book.price }}</li>
+                                <li class="list-group-item"><strong>Status:</strong> {{ report.book.status }}</li>
+                                <li class="list-group-item"><strong>Description:</strong> {{ report.book.description }}</li>
+                                <li class="list-group-item"><strong>Language:</strong> {{ report.book.language }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reporter Details Modal -->
+            <div class="modal fade" id="userModalReporter{{ report.user.id }}" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #068196; color: white;">
+                            <h5 class="modal-title">Reporter Details: {{ report.user.name }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong></strong> <img src="{{ report.user.photo.url }}" alt="User Photo" class="img-thumbnail" style="width: 100px;"></li>
+
+                                <li class="list-group-item"><strong>Place:</strong> {{ report.user.place }}</li>
+                                <li class="list-group-item"><strong>Phone:</strong> {{ report.user.phone }}</li>
+                                <li class="list-group-item"><strong>Email:</strong> {{ report.user.email }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seller Details Modal -->
+            <div class="modal fade" id="userModalSeller{{ report.book.user_id.id }}" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #068196; color: white;">
+                            <h5 class="modal-title">Seller Details: {{ report.book.user_id.name }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong></strong> <img src="{{ report.book.user_id.photo.url }}" alt="Seller Photo" class="img-thumbnail" style="width: 100px;"></li>
+
+                                <li class="list-group-item"><strong>Place:</strong> {{ report.book.user_id.place }}</li>
+                                <li class="list-group-item"><strong>Phone:</strong> {{ report.book.user_id.phone }}</li>
+                                <li class="list-group-item"><strong>Email:</strong> {{ report.book.user_id.email }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delete Confirmation Modal -->
+            <div class="modal fade" id="deleteConfirmationModal{{ report.book.id }}" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #dc3545; color: white;">
+                            <h5 class="modal-title">Confirm Delete</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete the book titled "{{ report.book.Tittle }}"?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <a href="{% url 'delete_book' report.book.id %}" class="btn btn-danger">Confirm Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </tbody>
+    </table><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+
+<!-- Bootstrap CSS and JavaScript (required for modal functionality) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}
